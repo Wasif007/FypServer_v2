@@ -39,17 +39,8 @@
     };
 
     register = function(user) {
-      var req = {
- method: 'POST',
- url: '/api/supervisorSignup',
- transformRequest: angular.indentity,
- headers: {
-   'Content-Type': undefined
- },
-
- data: user
-};
-      return $http('/api/supervisorSignup',user).success(function(data){
+     console.log(user);
+      return $http.post('/api/supervisorSignup',user).success(function(data){
         saveToken(data.token);
       });
     };
