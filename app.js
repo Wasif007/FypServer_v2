@@ -27,6 +27,7 @@ var appClientFiles = [
   'app_client/modules/modulesCtrl.js',
   'app_client/assign/assignCtrl.js',
   'app_client/common/directives/fileUpload.js',
+  'app_client/common/services/uploadFileService.js',
   'app_client/history/historyCtrl.js',
   'app_client/addguard/addguardCtrl.js',
   'app_client/auth/login/login.controller.js',
