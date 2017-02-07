@@ -4,8 +4,8 @@
     .module('pingFyp')
     .controller('registerCtrl', registerCtrl);
 
-  registerCtrl.$inject = ['authentication','$location'];
-  function registerCtrl(authentication,$location) {
+  registerCtrl.$inject = ['authentication','multipartForm','$location'];
+  function registerCtrl(authentication,multipartForm,$location) {
     var vm = this;
 
     vm.pageHeader = {
@@ -32,31 +32,17 @@
         vm.formError = "All fields required, please try again"+vm.credentials.name+
               " "+vm.credentials.email+" "+vm.credentials.phone+" "+
               vm.credentials.password+" "+vm.credentials.home_address+" FILE:"+vm.credentials.file.name;
-              console.log("HELLO1")
-
         return false;
      
       } else {
-              console.log("HELLO2")
-
         vm.doRegister();
       }
     };
 
     vm.doRegister = function() {
       vm.formError = "";
-      console.log("HELLO3")
-      authentication
-        .register(vm.credentials)
-        .error(function(err){
-          if (err.name == 'ValidationError') {
-   vm.formError="Email is already taken";
-  } else {
-    vm.formError = err;
-  }
-          
-        })
-        .then(function(){
+     var uploadUrl = '/api/supervisorSignup';
+    multipartForm.post(uploadUrl, vm.credentials).then(function(){
           $location.path('/login');
         });
     };
