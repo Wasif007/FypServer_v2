@@ -8,7 +8,7 @@
   multipartForm.$inject = ['$http'];
   function multipartForm ($http) {
 
-  return{ this.post = function(uploadUrl, data){
+   this.post = function(uploadUrl, data){
 		var fd = new FormData();
 		for(var key in data)
 			fd.append(key, data[key]);
@@ -16,8 +16,8 @@
 			transformRequest: angular.indentity,
 			headers: { 'Content-Type': undefined }
 		});
-		
-	}
+
+	
 }
   }
 
