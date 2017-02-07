@@ -21,22 +21,22 @@
       
         <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
         <div class="form-group">
-          <input type="text" class="form-control" name="name" placeholder="Enter your name" ng-model="vm.credentials.name">
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" ng-model="vm.credentials.name">
         </div>
         <div class="form-group">
-          <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="vm.credentials.email">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Password" ng-model="vm.credentials.password">
+          <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
         </div>
         <div class="form-group">
-          <input type="text" class="form-group" name="phone" placeholder="Enter phone 03XX-XXXXXXX" ng-model="vm.credentials.phone">
+          <input type="text" class="form-group" id="phone" placeholder="Enter phone 03XX-XXXXXXX" ng-model="vm.credentials.phone">
         </div>
         <div class="form-group">
-          <input type="text" class="form-group" name="home_address" placeholder="Enter Home Address" ng-model="vm.credentials.home_address">
+          <input type="text" class="form-group" id="home_address" placeholder="Enter Home Address" ng-model="vm.credentials.home_address">
         </div>
         <div>
-               <input type="file" name="file"  ng-model="vm.credentials.file" file-model="vm.credentials.file">
+               <input type="file" name="file" id="file" ng-model="vm.credentials.file" file-model="vm.credentials.file">
             </div>
         <button type="submit" class="btn btn-alt">Sign Up!
         </button>
