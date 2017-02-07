@@ -49,7 +49,7 @@
 
  data: user
 };
-      return $http.post(req).success(function(data){
+      return $http('/api/supervisorSignup',user).success(function(data){
         saveToken(data.token);
       });
     };
