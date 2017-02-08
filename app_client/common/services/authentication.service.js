@@ -51,6 +51,18 @@
       });
     };
 
+    posting=function(uploadUrl,data)
+    {
+        var fd = new FormData();
+    for(var key in data)
+      fd.append(key, data[key]);
+    return  $http.post(uploadUrl, fd, { transformRequest: angular.indentity,
+      headers: { 'Content-Type': undefined }
+    }).success(function(data){
+      console.log("DATA IS :"+data);
+    });
+  
+    }
     logout = function() {
       $window.localStorage.removeItem('ping-token');
     };
