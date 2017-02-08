@@ -12,11 +12,11 @@
 		var fd = new FormData();
 		for(var key in data)
 			fd.append(key, data[key]);
-		$http.post(uploadUrl, fd, {
-			transformRequest: angular.indentity,
+		return	$http.post(uploadUrl, fd, {	transformRequest: angular.indentity,
 			headers: { 'Content-Type': undefined }
+		}).success(function(data){
+			console.log("DATA IS :"+data);
 		});
-
 	
 }
   }
