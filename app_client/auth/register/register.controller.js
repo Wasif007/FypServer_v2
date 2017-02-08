@@ -41,9 +41,12 @@
 
     vm.doRegister = function() {
       vm.formError = "";
-  var uploadUrl='/api/supervisorSignup';
-  multipartForm.post(uploadUrl,vm.credentials)
-  }
+     var uploadUrl = '/api/supervisorSignup';
+    multipartForm.post(uploadUrl, vm.credentials).then(function(){
+          $location.path('/login');
+        });
+    };
+
   }
 
 })();

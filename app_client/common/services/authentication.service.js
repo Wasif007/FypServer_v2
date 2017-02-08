@@ -44,23 +44,7 @@
         saveToken(data.token);
       });
     };
-   posting=function(uploadUrl,data)
-   {
-    var fd = new FormData();
-    for(var key in data)
-      fd.append(key, data[key]);
-   return $http.post(uploadUrl, fd, {
-      transformRequest: angular.indentity,
-      headers: { 'Content-Type': undefined }
-    }).success(function(data)
-    {
-      saveToken(data.token);
-    });
 
-  
-}
-    
-   
     login = function(user) {
       return $http.post('/api/supervisorLogin', user).success(function(data) {
         saveToken(data.token);
