@@ -40,9 +40,20 @@
     };
 
     vm.doRegister = function() {
-      vm.formError = "";
+     vm.formError = "";
      var uploadUrl = '/api/supervisorSignup';
-    multipartForm.post(uploadUrl, vm.credentials).then(function(){
+      authentication
+        .posting(uploadUrl,vm.credentials)
+        .error(function(err){
+          if(err.message="Incorrect Password")
+          {
+            vm.formError="Password doesnot matches";
+          }
+          else{
+          vm.formError = err;
+        }
+        })
+        .then(function(){
           $location.path('/login');
         });
     };
