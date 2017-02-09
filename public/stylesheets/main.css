@@ -58,7 +58,7 @@ table {
  
  h1 {
      font-size:36px;
-        line-height: 44px;
+     line-height: 44px;
  }
  
  h2 {
@@ -213,8 +213,6 @@ table {
     
     .btn-alt{
         border: 1px solid #fff;
-    
-        
         padding: 10px 30px;
     }
     .btn-alt:hover{
@@ -361,11 +359,6 @@ table {
   ========================================
 */
 
-.img-circle {
-    border-radius: 50%;
-    width: 33%;
-}
-
 .why-attend {
   list-style: square;
   margin: 0 0 22px 30px;
@@ -399,7 +392,7 @@ textarea {
 }
 .register-group select {
   height: 34px;
-  width: 200px;
+  width: 60px;
 }
 .register-group textarea {
   height: 78px;
@@ -412,24 +405,4 @@ textarea {
 }
 .btn-default:hover {
   background: #77a198;
-}
-
-
-.choose_file{
-    position:relative;
-    display:inline-block;    
-    border-radius:8px;
-    border:#ebebeb solid 1px;
-    width:250px; 
-    padding: 4px 6px 4px 8px;
-    font: normal 14px Myriad Pro, Verdana, Geneva, sans-serif;
-    color: #7f7f7f;
-    margin-top: 2px;
-    background:white
-}
-.choose_file input[type="file"]{
-    -webkit-appearance:none; 
-    position:absolute;
-    top:0; left:0;
-    opacity:0; 
 }
