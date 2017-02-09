@@ -49,4 +49,5 @@ process.on('SIGTERM', function() {
 require('./guardValidation');
 require('./addingguard');
 require('./supervisorValidation');
+require('./assigningDuty');
 
