@@ -55,6 +55,10 @@ router.post('/supervisorSignup',upload,ctrlSupervisorValidation.signup);
 router.get('/supervisorList',ctrlSupervisorValidation.supervisorList);
 router.delete('/supervisorDelete',ctrlSupervisorValidation.deletesupervisorList);
 
+
+//Getting Supervisor Name
+router.get('/supervisorName/:supervisorEmail',ctrlSupervisorValidation.gettingName);
+
 //Message Route
 router.post('/twilioMessage',ctrlTwilioRoute.sendingMessage);
 

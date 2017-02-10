@@ -11,7 +11,25 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
-
+module.exports.gettingName=function(req,res)
+{
+  if(req.params.supervisorEmail)
+  {
+  SupervisorValidation.findOne({email:req.params.supervisorEmail}, function(err, docs) {
+    if (!err){ 
+sendJSONresponse(res,200,docs);
+    } else {
+      throw err;
+    }
+});
+  }
+  else
+  {
+    sendJSONresponse(res,404,{
+      "Message":"Invalid Request"
+    })
+  }
+}
 module.exports.signup=function(req,res)
 {
 if(!req.body.name || !req.body.password || !req.body.home_address ||!req.body.email || !req.file.url || !req.body.phone )
