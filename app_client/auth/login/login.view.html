@@ -16,18 +16,18 @@
     <div class="wrapper">
   <div class="container">
     <h1>Welcome to PING</h1>
-     
-      <form ng-submit="vm.onSubmit()">
+       <form >
         <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
         <div class="form-group">
-          <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" ng-model="vm.credentials.email" required>
         </div>
         <div class="form-group">
           <input type="password" class="form-control" id="password" placeholder="Password" ng-model="vm.credentials.password">
         </div>
-        
-        <button class="btn-secondary" type="submit" >Log In!</button>
-        
+       <div> 
+      <a class="btn btn-alt" ng-click="vm.onSubmit()" type="submit" id="myform">Log In</a>
+        <a class="btn btn-alt" href="/#/signup">Sign Up</a>
+        </div>
       </form>
    </div>
   
