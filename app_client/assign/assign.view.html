@@ -65,26 +65,26 @@
 
         --> <form class="col-1-3" action="#" method="post">
             
-          <img class="img-circle" src="sakhi.jpg"> 
+          
 
           <fieldset class="register-group">
-             
-            <label>
+              <label>
+              Supervisor Name
+              <input type="text" name="supervisorName" placeholder="Full name" required ng-model="vm.credentials.name">
+            </label>
+            <label >
             Select a Guard
-              <select name="Location" required>
-                <option value="1" selected>Adeel Jigar</option>
-                <option value="2">Wasif ILY</option>
-                <option value="3">Neema Kaala</option>
-                <option value="4">Sakhi KHOOBSURAT</option>
-               
+              <select name="guardName"  required style="width: 300px">
+                <option value="" ng-repeat="guards in vm.data.guards">{{guards.name}}</option>
+                
               </select>
             </label>
 
            
 
             <label>
-            Location
-              <select name="Location" required>
+            Select a Location
+              <select name="location" required style="width: 300px">
                 <option value="1" selected>FCSE</option>
                 <option value="2">FES</option>
                 <option value="3">FMSE</option>
@@ -92,7 +92,10 @@
                 <option value="5">Barbers</option>
               </select>
             </label>
-
+             <label>
+              Duty Timings
+              <input type="text" name="time" placeholder="Time Period" required ng-model="vm.credentials.name">
+            </label>
          
 
           </fieldset>
