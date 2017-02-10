@@ -29,10 +29,8 @@
           ||!vm.credentials.email || !vm.credentials.password
           )
            {
-        vm.formError = "All fields required, please try again"+vm.credentials.name+
-              " "+vm.credentials.email+" "+vm.credentials.phone+" "+
-              vm.credentials.password+" "+vm.credentials.home_address+" FILE:"+vm.credentials.file.name;
-        return false;
+        vm.formError = "All fields required, please try again"
+         return false;
      
       } else {
         vm.doRegister();
