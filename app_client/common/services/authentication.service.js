@@ -9,8 +9,12 @@
 
     var saveToken = function (token) {
       $window.localStorage['ping-token'] = token;
-    };
 
+    };
+    var saveEmail=function(email)
+    {
+      $window.localStorage['supervisor-email']=email;
+    }
     var getToken = function () {
       return $window.localStorage['ping-token'];
     };
@@ -37,11 +41,19 @@
         };
       }
     };
-
+  var gettingEmail=function()
+  {
+    var token=getToken();
+ var payload = JSON.parse($window.atob(token.split('.')[1]));
+        return {
+          email : payload.email
+        };
+          }
     register = function(user) {
      console.log(user);
       return $http.post('/api/supervisorSignup',user).success(function(data){
         saveToken(data.token);
+        saveEmail(gettingEmail())
       });
     };
 
