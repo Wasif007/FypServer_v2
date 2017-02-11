@@ -63,7 +63,7 @@
         
      
 
-        --> <form class="col-1-3" action="#" method="post">
+        --> <form class="col-1-3" ng-submit="vm.onSubmit()">
             
           
 
@@ -75,7 +75,7 @@
             <label >
             Select a Guard
               <select name="guardName"  required style="width: 300px">
-                <option value="" ng-repeat="guards in vm.datas.guards">{{guards.name}}</option>
+                <option value="" ng-repeat="guards in vm.datas.guards" ng-model="vm.credentials.guardName">{{guards.name}}</option>
                 
               </select>
             </label>
@@ -84,17 +84,17 @@
 
             <label>
             Select a Location
-              <select name="location" required style="width: 300px">
-                <option value="1" selected>FCSE</option>
-                <option value="2">FES</option>
-                <option value="3">FMSE</option>
-                <option value="4">FME</option>
-                <option value="5">Barbers</option>
-              </select>
+              <select name="location" required style="width: 300px"
+              ng-model="vm.credentials.location">
+                <option value="fcse" selected>FCSE</option>
+                <option value="fee">FEE</option>
+                <option value="fme">FME</option>
+                <option value="fcme">FCME</option>
+                </select>
             </label>
              <label>
               Duty Timings
-              <input type="text" name="time" placeholder="Time Period" required ng-model="vm.credentials.name">
+              <input type="text" name="time" placeholder="Time Period" required ng-model="vm.credentials.time">
             </label>
          
 

@@ -10,7 +10,7 @@
     var getListOfGuards = function () {
       return $http.get('/api/addingguard');
     };
-
+    
     return {
       getListOfGuards : getListOfGuards
     };
