@@ -75,7 +75,7 @@
             <label >
             Select a Guard
               <select name="guardName"  required style="width: 300px" ng-model="vm.credentials.guardName">
-                <option value="" ng-repeat="guards in vm.datas.guards" >{{guards.name}}</option>
+                <option ng-repeat="guards in vm.datas.guards" >{{guards.name}}</option>
                 
               </select>
             </label>
