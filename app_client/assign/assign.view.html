@@ -75,8 +75,7 @@
             <label >
             Select a Guard
               <select name="guardName"  required style="width: 300px">
-                <option value="" ng-repeat="guards in vm.data.guards">
-                  <p>{{guards.home_address}}</p>
+                <option value="" ng-repeat="guards in vm.data.locations">{{guards.home_address}}
                 </option>
                 
               </select>
