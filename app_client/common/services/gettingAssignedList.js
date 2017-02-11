@@ -8,7 +8,7 @@
   function assignedGuard ($http) {
 
     var getListOfGuards = function () {
-      return $http.get('/api/assignDuty');
+      return $http.get('/api/addingguard');
     };
 
     return {
