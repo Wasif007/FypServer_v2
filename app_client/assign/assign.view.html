@@ -70,13 +70,12 @@
           <fieldset class="register-group">
               <label>
               Supervisor Name
-              <input type="text" name="supervisorName"  ng-model="vm.data.supervisor.name" disabled></input>
+              <input type="text" name="supervisorName" placeholder="Full name" required ng-model="vm.credentials.name">
             </label>
             <label >
             Select a Guard
               <select name="guardName"  required style="width: 300px">
-                <option value="" ng-repeat="guards in vm.data.locations">{{guards}}
-                </option>
+                <option value="" ng-repeat="guards in vm.datas.guards">{{guards.name}}</option>
                 
               </select>
             </label>
