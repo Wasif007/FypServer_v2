@@ -23,6 +23,7 @@ vm.credentials = {
        .success(function(data){
        	vm.data={supervisor:data};
        	vm.credentials.supervisorName=vm.data.supervisor.name;
+       	vm.credentials.supervisorImageUrl=vm.data.supervisor.imageUrl;
        })
        .error(function(e){
        	vm.message="Sorry, something's gone wrong";
