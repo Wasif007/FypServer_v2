@@ -13,8 +13,6 @@ vm.credentials = {
     assignedGuard.getListOfGuards()
         .success(function(data) {
          vm.datas = { guards: data };
-          console.log(vm.data);
-
         })
         .error(function (e) {
           vm.message = "Sorry, something's gone wrong, please try again later";
@@ -30,6 +28,12 @@ vm.credentials = {
        });
 
        vm.onSubmit=function(){
+       assigningDuty.getGuardSpecificGuard(vm.credentials.guardName).success(function(data){
+       	vm.guardData={guard:data};
+       	vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
+       }).error(function(e){
+       	vm.message="Sorry, something's gone wrong";
+       });
        	console.log(vm.credentials.guardName+" "+
       	vm.credentials.supervisorName
       		+" "+vm.credentials.supervisorImageUrl+" "+

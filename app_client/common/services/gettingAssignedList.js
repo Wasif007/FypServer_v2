@@ -11,7 +11,12 @@
       return $http.get('/api/addingguard');
     };
     
+    var getGuardSpecificGuard=function(name)
+    {
+      return $http.get('/api/guardData/'+name);
+    }
     return {
+      getGuardSpecificGuard:getGuardSpecificGuard,
       getListOfGuards : getListOfGuards
     };
   }
