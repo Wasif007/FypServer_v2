@@ -11,6 +11,8 @@
     assignedGuard.getListOfGuards()
         .success(function(data) {
           vm.data = { guards: data };
+          console.log(data);
+          console.log(vm.data.guards);
           console.log(vm.data.guards.name);
         })
         .error(function (e) {
