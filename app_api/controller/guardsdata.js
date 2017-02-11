@@ -8,7 +8,26 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
+module.exports.gettingData=function(req,res)
+{
+	 if(req.params.guardName)
+  {
+  Guard.findOne({name:req.params.guardName}, function(err, docs) {
+    if (!err){ 
+sendJSONresponse(res,200,docs);
+    } else {
+      throw err;
+    }
+});
+  }
+  else
+  {
+    sendJSONresponse(res,404,{
+      "Message":"eRROR"
+    })
+  }
 
+}
        
 module.exports.guards=function(req,res)
 {
