@@ -10,8 +10,8 @@
 
     assignedGuard.getListOfGuards()
         .success(function(data) {
-          vm.data = { guards: data };
-          console.log(vm.data.guards);
+         vm.data = { locations: data };
+          console.log(vm.data);
         })
         .error(function (e) {
           vm.message = "Sorry, something's gone wrong, please try again later";
