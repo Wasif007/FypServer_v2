@@ -34,7 +34,8 @@ var appClientFiles = [
   'app_client/auth/login/login.controller.js',
   'app_client/auth/register/register.controller.js',
   'app_client/common/services/authentication.service.js',
-  'app_client/common/services/mean_service.js'
+  'app_client/common/services/mean_service.js',
+  'app_client/common/services/gettingSupervisorData.js'
 ];
 
 var uglified = uglifyJs.minify(appClientFiles, { compress : false });

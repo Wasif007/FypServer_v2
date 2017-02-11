@@ -26,7 +26,7 @@ sendJSONresponse(res,200,docs);
   else
   {
     sendJSONresponse(res,404,{
-      "Message":"Invalid Request"
+      "Message":"eRROR"
     })
   }
 }
