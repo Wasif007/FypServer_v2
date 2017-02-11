@@ -11,7 +11,7 @@
     assignedGuard.getListOfGuards()
         .success(function(data) {
           vm.data = { guards: data };
-          
+          console.log(vm.data.guards);
         })
         .error(function (e) {
           vm.message = "Sorry, something's gone wrong, please try again later";
