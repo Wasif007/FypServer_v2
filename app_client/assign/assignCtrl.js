@@ -43,7 +43,7 @@ vm.credentials = {
         vm.guardData={guard:data};
         vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
        vm.credentials.guardUsername=vm.guardData.guard.email;
-  console.log("Second Time "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
+  console.log("Second Time "+" "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
     +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
     +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
   
