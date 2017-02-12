@@ -32,13 +32,13 @@ vm.credentials = {
        	vm.guardData={guard:data};
        	console.log(vm.guardData.guard.imageUrl);
        	vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
-       
+       vm.credentials.email=vm.guardData.guard.email;
        	console.log(vm.credentials.guardName+" "+
       	vm.credentials.supervisorName
       		+" "+vm.credentials.supervisorImageUrl+" "+
       		vm.credentials.guardImageUrl+" "+
       		vm.credentials.location+" "+
-      		vm.credentials.time
+      		vm.credentials.time+" "+vm.credentials.email
       		);
        }).error(function(e){
        	vm.message="Sorry, something's gone wrong";

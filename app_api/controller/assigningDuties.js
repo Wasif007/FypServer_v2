@@ -34,7 +34,7 @@ module.exports.assigningDuty=function(req,res)
 
 	if(!req.body.supervisorName || !req.body.guardName 
 		|| !req.body.supervisorImageUrl  || !req.body.guardImageUrl 
-		|| !req.body.time || !req.body.location)
+		|| !req.body.time || !req.body.location ||!req.body.guardUsername)
 	{
 		sendJSONresponse(res,404,{
 			"message":"Required fields are not provided"
@@ -47,29 +47,30 @@ module.exports.assigningDuty=function(req,res)
 	guardAssigning.supervisorImageUrl=req.body.supervisorImageUrl;
 	guardAssigning.guardName=req.body.guardName;
 	guardAssigning.time=req.body.time;
+	guardAssigning.guardUsername=req.body.guardUsername;
 	if(req.body.location==='FCSE')
 	{
 		guardAssigning.location="Faculty of Computer Science";
-		guardAssigning.lat="50";
-		guardAssigning.lng="50";
+		guardAssigning.lat="34.069349";
+		guardAssigning.lng="72.644918";
 	}
 	else if(req.body.location==='FEE')
 	{
 		guardAssigning.location="Faculty of Electronic Engineering";
-	guardAssigning.lat="60";
-		guardAssigning.lng="60";
+	guardAssigning.lat="34.09999";
+		guardAssigning.lng="72.66666";
 	}
 	else if(req.body.location==='FCME')
 	{
 		guardAssigning.location="Faculty of Chemical Engineering";
-	guardAssigning.lat="70";
-		guardAssigning.lng="70";
+	guardAssigning.lat="34.1111";
+		guardAssigning.lng="72.7777";
 	}
 	else if(req.body.location==='FME')
 	{
 		guardAssigning.location="Faculty of Mechnical Engineering";
-	guardAssigning.lat="80";
-		guardAssigning.lng="80";
+	guardAssigning.lat="34.3311";
+		guardAssigning.lng="72.8888";
 	}
 	guardAssigning.save(function(err) {
     if (err) {

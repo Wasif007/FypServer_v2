@@ -17,6 +17,10 @@ var assignDuties=new mongoose.Schema({
 		type:String,
 		required:true
 	},
+	guardUsername:{
+type:String,
+required:true
+	},
 	time:
 	 {
 	  type: String,
