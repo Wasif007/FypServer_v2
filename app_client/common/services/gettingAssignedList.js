@@ -18,7 +18,7 @@
 
     var assigningDuty=function(user)
     {
-return $http.post('/api/assignDuty').success(function(data){
+return $http.post('/api/assignDuty',user).success(function(data){
 console.log(data);
 });
     }
