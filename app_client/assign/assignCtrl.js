@@ -22,7 +22,13 @@
       vm.data={supervisor:data};
       vm.credentials.supervisorName=vm.data.supervisor.name;
       vm.credentials.supervisorImageUrl=vm.data.supervisor.imageUrl;
-       
+       assignedGuard.getListOfGuards()
+       .success(function(data){
+        vm.datas={guards:data};
+       })
+       .error(function(e){
+        console.log(e);
+       })
     })
    .error(function(e){
     console.log(e);
