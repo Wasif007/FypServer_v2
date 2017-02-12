@@ -65,7 +65,8 @@
 
         --> <form class="col-1-3" ng-submit="vm.onSubmit()">
             
-          
+         <div role="alert" ng-show="vm.formError" class="alert alert-danger">{{ vm.formError }}</div>
+         
 
           <fieldset class="register-group">
               <label>

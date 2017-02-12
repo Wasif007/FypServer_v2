@@ -28,22 +28,26 @@ vm.credentials = {
        });
 
        vm.onSubmit=function(){
-       assignedGuard.getGuardSpecificGuard(vm.credentials.guardName).success(function(data){
-       	vm.guardData={guard:data};
-       	console.log(vm.guardData.guard.imageUrl);
-       	vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
+       if(!req.body.supervisorName || !req.body.guardName 
+    || !req.body.supervisorImageUrl  || !req.body.guardImageUrl 
+    || !req.body.time || !req.body.location ||!req.body.guardUsername)
+  
+           {
+        vm.formError = "All fields required, please try again"
+         return false;
+     
+      } else {
+        assignedGuard.getGuardSpecificGuard(vm.credentials.guardName).success(function(data){
+        vm.guardData={guard:data};
+        vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
        vm.credentials.email=vm.guardData.guard.email;
-       	console.log(vm.credentials.guardName+" "+
-      	vm.credentials.supervisorName
-      		+" "+vm.credentials.supervisorImageUrl+" "+
-      		vm.credentials.guardImageUrl+" "+
-      		vm.credentials.location+" "+
-      		vm.credentials.time+" "+vm.credentials.email
-      		);
         vm.assignDuty();
        }).error(function(e){
-       	vm.message="Sorry, something's gone wrong";
+        vm.message="Sorry, something's gone wrong";
        });
+      }
+        
+       
        }
 
     vm.assignDuty = function() {
