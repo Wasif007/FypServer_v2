@@ -6,7 +6,13 @@
 
     assignCtrl.$inject = ['assignedGuard','supervisorData','$window'];
   function assignCtrl(assignedGuard,supervisorData,$window) {
-    var vm = this;
+   
+}
+
+})();
+
+/*
+ var vm = this;
 vm.credentials = {
       time : ""
     };
@@ -19,12 +25,12 @@ vm.credentials = {
         });
        supervisorData.getListOfGuards($window.localStorage['supervisor-email'])
        .success(function(data){
-       	vm.data={supervisor:data};
-       	vm.credentials.supervisorName=vm.data.supervisor.name;
-       	vm.credentials.supervisorImageUrl=vm.data.supervisor.imageUrl;
+        vm.data={supervisor:data};
+        vm.credentials.supervisorName=vm.data.supervisor.name;
+        vm.credentials.supervisorImageUrl=vm.data.supervisor.imageUrl;
        })
        .error(function(e){
-       	vm.message="Sorry, something's gone wrong";
+        vm.message="Sorry, something's gone wrong";
        });
 
        vm.onSubmit=function(){
@@ -69,6 +75,4 @@ vm.credentials = {
         });
     };
  
-}
-
-})();
+*/
