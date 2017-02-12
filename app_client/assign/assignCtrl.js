@@ -35,7 +35,7 @@
     console.log(e);
    });
 
-   vm.onSubmit=function()
+   vm.onSubmittion=function()
    {
       if(!vm.credentials.supervisorName || !vm.credentials.guardName 
     || !vm.credentials.supervisorImageUrl   
