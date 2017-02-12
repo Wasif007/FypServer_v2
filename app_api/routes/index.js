@@ -35,7 +35,8 @@ var ctrlSupervisorValidation=require('../controller/supervisorValidation');
 var ctrlTwilioRoute=require('../controller/twilioMessage');
 //Assigning Duties
 var ctrlAssigningDuties=require('../controller/assigningDuties')
-
+//Person Identification
+var ctrlPersonIdentification=require('../controller/personData');
 
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
@@ -70,5 +71,7 @@ router.post('/assignDuty',ctrlAssigningDuties.assigningDuty);
 router.get('/assignDuty',ctrlAssigningDuties.assignedDutiesList);
 router.delete('/assignDuty',ctrlAssigningDuties.deleteAssignedDuties);
 
+//Getting Data From Algorithm
+router.post('/person',ctrlPersonIdentification.gettingDataPerson);
 
 module.exports = router;

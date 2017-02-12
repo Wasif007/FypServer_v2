@@ -47,25 +47,25 @@ module.exports.assigningDuty=function(req,res)
 	guardAssigning.supervisorImageUrl=req.body.supervisorImageUrl;
 	guardAssigning.guardName=req.body.guardName;
 	guardAssigning.time=req.body.time;
-	if(req.body.location==='fcse')
+	if(req.body.location==='FCSE')
 	{
 		guardAssigning.location="Faculty of Computer Science";
 		guardAssigning.lat="50";
 		guardAssigning.lng="50";
 	}
-	else if(req.body.location==='fee')
+	else if(req.body.location==='FEE')
 	{
 		guardAssigning.location="Faculty of Electronic Engineering";
 	guardAssigning.lat="60";
 		guardAssigning.lng="60";
 	}
-	else if(req.body.location==='fcme')
+	else if(req.body.location==='FCME')
 	{
 		guardAssigning.location="Faculty of Chemical Engineering";
 	guardAssigning.lat="70";
 		guardAssigning.lng="70";
 	}
-	else if(req.body.location==='fme')
+	else if(req.body.location==='FME')
 	{
 		guardAssigning.location="Faculty of Mechnical Engineering";
 	guardAssigning.lat="80";
