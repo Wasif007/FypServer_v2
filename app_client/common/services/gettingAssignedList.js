@@ -25,7 +25,7 @@ console.log(data);
     return {
       getGuardSpecificGuard:getGuardSpecificGuard,
       getListOfGuards : getListOfGuards,
-      assignedGuard:assignedGuard
+      assigningDuty:assigningDuty
     };
   }
 
