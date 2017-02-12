@@ -29,8 +29,8 @@ vm.credentials = {
 
        vm.onSubmit=function(){
        if(!vm.credentials.supervisorName || !vm.credentials.guardName 
-    || !vm.credentials.supervisorImageUrl  || !vm.credentials.guardImageUrl 
-    || !vm.credentials.time || !vm.credentials.location ||!vm.credentials.guardUsername)
+    || !vm.credentials.supervisorImageUrl   
+    || !vm.credentials.time || !vm.credentials.location )
   {console.log("First Time "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
     +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
     +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
