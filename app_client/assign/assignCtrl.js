@@ -42,7 +42,7 @@ vm.credentials = {
         assignedGuard.getGuardSpecificGuard(vm.credentials.guardName).success(function(data){
         vm.guardData={guard:data};
         vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
-       vm.credentials.email=vm.guardData.guard.email;
+       vm.credentials.guardUsername=vm.guardData.guard.email;
   console.log("Second Time "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
     +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
     +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
