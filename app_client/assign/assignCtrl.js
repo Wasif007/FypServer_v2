@@ -32,9 +32,7 @@ vm.credentials = {
        	vm.guardData={guard:data};
        	console.log(vm.guardData.guard.imageUrl);
        	vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
-       }).error(function(e){
-       	vm.message="Sorry, something's gone wrong";
-       });
+       
        	console.log(vm.credentials.guardName+" "+
       	vm.credentials.supervisorName
       		+" "+vm.credentials.supervisorImageUrl+" "+
@@ -42,6 +40,9 @@ vm.credentials = {
       		vm.credentials.location+" "+
       		vm.credentials.time
       		);
+       }).error(function(e){
+       	vm.message="Sorry, something's gone wrong";
+       });
        }
  /*
 vm.onSubmit = function () {
