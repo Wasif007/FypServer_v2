@@ -6,6 +6,7 @@
 
     assignCtrl.$inject = ['assignedGuard','supervisorData','$window'];
   function assignCtrl(assignedGuard,supervisorData,$window) {
+    var vm=this;
    vm.credentials={
     time:"",
     location:"",
