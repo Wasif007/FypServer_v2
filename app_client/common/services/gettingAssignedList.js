@@ -15,9 +15,17 @@
     {
       return $http.get('/api/guardData/'+name);
     }
+
+    var assigningDuty=function(user)
+    {
+return $http.post('/api/assignDuty').success(function(data){
+console.log(data);
+});
+    }
     return {
       getGuardSpecificGuard:getGuardSpecificGuard,
-      getListOfGuards : getListOfGuards
+      getListOfGuards : getListOfGuards,
+      assignedGuard:assignedGuard
     };
   }
 
