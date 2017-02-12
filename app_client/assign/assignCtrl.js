@@ -53,9 +53,6 @@
         vm.guardData={guard:data};
         vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
        vm.credentials.guardUsername=vm.guardData.guard.email;
-  console.log("Second Time "+" supervisor: "+vm.credentials.supervisorName +" GuardName:"+vm.credentials.guardName 
-    +" Suo imageUrl: "+vm.credentials.supervisorImageUrl  +" Guard imageUrl: "+vm.credentials.guardImageUrl 
-    +" Time: "+vm.credentials.time +" location: "+vm.credentials.location +" Email: "+vm.credentials.guardUsername);
   
         vm.assignDuty();
        }).error(function(e){
@@ -65,6 +62,10 @@
  
    }
     vm.assignDuty = function() {
+      console.log(" supervisor: "+vm.credentials.supervisorName +" GuardName:"+vm.credentials.guardName 
+    +" Suo imageUrl: "+vm.credentials.supervisorImageUrl  +" Guard imageUrl: "+vm.credentials.guardImageUrl 
+    +" Time: "+vm.credentials.time +" location: "+vm.credentials.location +" Email: "+vm.credentials.guardUsername);
+  
       assignedGuard
         .assigningDuty(vm.credentials)
         .error(function(err){
