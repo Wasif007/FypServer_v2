@@ -30,6 +30,7 @@ vm.credentials = {
        vm.onSubmit=function(){
        assignedGuard.getGuardSpecificGuard(vm.credentials.guardName).success(function(data){
        	vm.guardData={guard:data};
+       	console.log(vm.guardData.guard);
        	vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
        }).error(function(e){
        	vm.message="Sorry, something's gone wrong";
