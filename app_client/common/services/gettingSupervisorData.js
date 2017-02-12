@@ -8,12 +8,12 @@
   supervisorData.$inject = ['$http'];
   function supervisorData ($http) {
 
-    var getListOfGuards = function (emailId) {
+    var getSuperVisor = function (emailId) {
       return $http.get('/api/supervisorName/'+emailId);
     };
 
     return {
-      getListOfGuards : getListOfGuards
+      getSuperVisor : getSuperVisor
     };
   }
 

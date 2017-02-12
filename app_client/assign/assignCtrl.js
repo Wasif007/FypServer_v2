@@ -6,7 +6,26 @@
 
     assignCtrl.$inject = ['assignedGuard','supervisorData','$window'];
   function assignCtrl(assignedGuard,supervisorData,$window) {
-   
+   vm.credentials={
+    time:"",
+    location:"",
+    guardUsername:"",
+    guardImageUrl:"",
+    supervisorName:"",
+    supervisorImageUrl:"",
+    guardName:""
+   }
+   supervisorData.getSuperVisor($window.localStorage['supervisor-email'])
+   .success(function(data)
+    {
+      vm.data={supervisor:data};
+      vm.credentials.supervisorName=vm.data.supervisor.name;
+      vm.credentials.supervisorImageUrl=vm.data.supervisor.imageUrl;
+       
+    })
+   .error(function(e){
+    console.log(e);
+   })
 }
 
 })();
@@ -74,5 +93,5 @@ vm.credentials = {
           $location.path('/supervisor');
         });
     };
- 
+
 */
