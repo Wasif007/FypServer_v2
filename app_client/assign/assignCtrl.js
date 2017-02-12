@@ -28,9 +28,9 @@ vm.credentials = {
        });
 
        vm.onSubmit=function(){
-       if(!req.body.supervisorName || !req.body.guardName 
-    || !req.body.supervisorImageUrl  || !req.body.guardImageUrl 
-    || !req.body.time || !req.body.location ||!req.body.guardUsername)
+       if(!vm.credentials.supervisorName || !vm.credentials.guardName 
+    || !vm.credentials.supervisorImageUrl  || !vm.credentials.guardImageUrl 
+    || !vm.credentials.time || !vm.credentials.location ||!vm.credentials.guardUsername)
   
            {
         vm.formError = "All fields required, please try again"
@@ -46,7 +46,7 @@ vm.credentials = {
         vm.message="Sorry, something's gone wrong";
        });
       }
-        
+
        
        }
 
