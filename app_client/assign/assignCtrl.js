@@ -43,9 +43,9 @@ vm.credentials = {
         vm.guardData={guard:data};
         vm.credentials.guardImageUrl=vm.guardData.guard.imageUrl;
        vm.credentials.guardUsername=vm.guardData.guard.email;
-  console.log("Second Time "+" "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
-    +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
-    +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
+  console.log("Second Time "+" supervisor: "+vm.credentials.supervisorName +" GuardName:"+vm.credentials.guardName 
+    +" Suo imageUrl: "+vm.credentials.supervisorImageUrl  +" Guard imageUrl: "+vm.credentials.guardImageUrl 
+    +" Time: "+vm.credentials.time +" location: "+vm.credentials.location +" Email: "+vm.credentials.guardUsername);
   
         vm.assignDuty();
        }).error(function(e){
@@ -68,37 +68,7 @@ vm.credentials = {
           $location.path('/supervisor');
         });
     };
- /*
-vm.onSubmit = function () {
-      vm.formError = "";
-      if (!vm.credentials.time || !vm.credentials.guardName) {
-        vm.formError = "All fields required, please try again";
-        return false;
-      } else {
-      console.log(vm.credentials.guardName+" "+
-      	vm.credentials.supervisorName
-      		+" "+vm.credentials.supervisorImageUrl+" "+
-      		vm.credentials.guardImageUrl+" "+
-      		vm.credentials.location+" "+
-      		vm.credentials.time
-      		);
-        vm.assignDuty();
-      }
-    };
-    vm.assignDuty = function() {
-      vm.formError = "";
-      assignedGuard
-        .assigningDuty(vm.credentials)
-        .error(function(err){
-         
-          vm.formError = err;
-        }
-        })
-        .then(function(){
-          $location.path('/supervisor');
-        });
-    };
-*/
+ 
 }
 
 })();
