@@ -25,6 +25,24 @@
        assignedGuard.getListOfGuards()
        .success(function(data){
         vm.datas={guards:data};
+        vm.onSubmit=function()
+        {
+            if(!vm.credentials.supervisorName || !vm.credentials.guardName 
+    || !vm.credentials.supervisorImageUrl   
+    || !vm.credentials.time || !vm.credentials.location )
+
+{console.log("First Time "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
+    +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
+    +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
+           
+        vm.formError = "All fields required, please try again"
+         return false;
+     
+      } else
+      {
+ 
+      }
+          }
        })
        .error(function(e){
         console.log(e);
