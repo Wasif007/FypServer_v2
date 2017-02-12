@@ -40,10 +40,24 @@ vm.credentials = {
       		vm.credentials.location+" "+
       		vm.credentials.time+" "+vm.credentials.email
       		);
+        vm.assignDuty();
        }).error(function(e){
        	vm.message="Sorry, something's gone wrong";
        });
        }
+
+    vm.assignDuty = function() {
+      assignedGuard
+        .assigningDuty(vm.credentials)
+        .error(function(err){
+         
+          vm.formError = err;
+        }
+        )
+        .then(function(){
+          $location.path('/supervisor');
+        });
+    };
  /*
 vm.onSubmit = function () {
       vm.formError = "";
