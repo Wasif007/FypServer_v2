@@ -40,11 +40,8 @@
       if(!vm.credentials.supervisorName || !vm.credentials.guardName 
     || !vm.credentials.supervisorImageUrl   
     || !vm.credentials.time || !vm.credentials.location )
-  {console.log("First Time "+vm.credentials.supervisorName +" "+vm.credentials.guardName 
-    +" "+vm.credentials.supervisorImageUrl  +" "+vm.credentials.guardImageUrl 
-    +" "+vm.credentials.time +" "+vm.credentials.location +" "+vm.credentials.guardUsername);
-           
-        vm.formError = "All fields required, please try again"
+  {
+     vm.formError = "All fields required, please try again"
          return false;
      
       }
@@ -62,10 +59,7 @@
  
    }
     vm.assignDuty = function() {
-      console.log(" supervisor: "+vm.credentials.supervisorName +" GuardName:"+vm.credentials.guardName 
-    +" Suo imageUrl: "+vm.credentials.supervisorImageUrl  +" Guard imageUrl: "+vm.credentials.guardImageUrl 
-    +" Time: "+vm.credentials.time +" location: "+vm.credentials.location +" Email: "+vm.credentials.guardUsername);
-  
+   
       assignedGuard
         .assigningDuty(vm.credentials)
         .error(function(err){
