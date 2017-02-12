@@ -4,8 +4,8 @@
     .module('pingFyp')
     .controller('assignCtrl', assignCtrl);
 
-    assignCtrl.$inject = ['assignedGuard','supervisorData','$window'];
-  function assignCtrl(assignedGuard,supervisorData,$window) {
+    assignCtrl.$inject = ['assignedGuard','supervisorData','$window','$location'];
+  function assignCtrl(assignedGuard,supervisorData,$window,$location) {
     var vm=this;
    vm.credentials={
     time:"",
