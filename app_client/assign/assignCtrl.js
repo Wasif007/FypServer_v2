@@ -25,7 +25,16 @@
        assignedGuard.getListOfGuards()
        .success(function(data){
         vm.datas={guards:data};
-        vm.onSubmit=function()
+
+       });
+       .error(function(e){
+        console.log(e);
+       })
+    });
+   .error(function(e){
+    console.log(e);
+   });
+    vm.onSubmit=function()
         {
             if(!vm.credentials.supervisorName || !vm.credentials.guardName 
     || !vm.credentials.supervisorImageUrl   
@@ -43,14 +52,6 @@
  
       }
           }
-       })
-       .error(function(e){
-        console.log(e);
-       })
-    })
-   .error(function(e){
-    console.log(e);
-   })
 }
 
 })();
