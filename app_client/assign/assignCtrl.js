@@ -33,7 +33,7 @@
     })
    .error(function(e){
     console.log(e);
-   })
+   });
 
    vm.onSubmit=function()
    {
