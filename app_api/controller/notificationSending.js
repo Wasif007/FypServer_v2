@@ -19,7 +19,7 @@ var message = {
     
     notification: {
         title: 'Naeem',
-        body: 'Bhai'
+        body: {name:'Bhai'}
     }
 };
 //callback style
