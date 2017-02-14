@@ -42,25 +42,13 @@ uri: 'https://fcm.googleapis.com/fcm/send',
 
 module.exports.gettingTokensFromDb=function(req,res)
 {
-    var query = tokensFromClient.find({}).select('Token -_id');
-
-    query.exec(function (err, someValue) {
-        if (err) return next(err);
-        else{
-        sendJSONresponse(res,200,someValue);  
-        }
-
-    });
+    
   
  }
 
  module.exports.deletingTokensFromDb=function(req,res)
  {
-   tokensFromClient.remove({}, function(err,removed) {
-sendJSONresponse(res,200,{
-  "Message":" Deleted all data"
-})
-});
+   
  }
 
  module.exports.sendingNotificationtoFcm=function(req,res)
