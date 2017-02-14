@@ -14,15 +14,34 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingDataPerson=function(req,res)
 {
-  var query = tokensFromClient.find({}).select('token -_id');
+  var query = tokensFromClient.find({}).select('Token -_id');
 
     query.exec(function (err, someValue) {
         if (err) return next(err);
         else
         {
-        	sendJSONresponse(res,200,{
-        		"Message":someValue
-        	})
+        	var message = {
+    to: someValue, // required fill with device token or topics
+    notification: {
+        title: 'Person Identication'
+    },
+    data: {
+        title: 'Naeem',
+        body: 'Bhai'
+    }
+};
+//callback style
+fcm.send(message, function(err, response){
+    if (err) {
+        console.log("Something has gone wrong!");
+    } else {
+        console.log("Successfully sent with response: ", response);
+    sendJSONresponse(res,200,{
+      "Message":" Notification Send"
+    })
+    }
+});
+
         }
     });
   
