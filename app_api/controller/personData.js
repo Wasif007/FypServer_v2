@@ -18,9 +18,10 @@ module.exports.gettingDataPerson=function(req,res)
 
     query.exec(function (err, someValue) {
         if (err) return next(err);
-       else{
-  var message = {
-    to: someValue, // required fill with device token or topics
+       value=someValue[0]+" "+someValue;
+    });
+	var message = {
+    to: "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX", // required fill with device token or topics
     notification: {
         title: 'Person Identication'
     },
@@ -36,13 +37,11 @@ fcm.send(message, function(err, response){
     } else {
         console.log("Successfully sent with response: ", response);
   return  sendJSONresponse(res,200,{
-      "Message":" Notification Send"
+      "Message":" Notification Send",
+      "som":value
     });
     }
-});      
-       }
-    });
-	
+});
 
         
     
