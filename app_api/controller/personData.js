@@ -15,9 +15,13 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.gettingDataPerson=function(req,res)
 {
     var query = tokensFromClient.find({}).select('Token -_id');
-
+var value;
     query.exec(function (err, someValue) {
         if (err) return next(err);
+        else
+        {
+          value=someValue[0].Token;
+        }
     });
 	var message = {
     "to": "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX",
@@ -38,7 +42,8 @@ fcm.send(message, function(err, response){
     } else {
         console.log("Successfully sent with response: ", response);
   return  sendJSONresponse(res,200,{
-      "Message":" Notification Send"
+      "Message":" Notification Send",
+      "Some ":value
     });
     }
 });
