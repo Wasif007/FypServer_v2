@@ -27,32 +27,17 @@ uri: 'https://fcm.googleapis.com/fcm/send',
       'data': { 'title': "Hello", 'body': 'Naeem Bhai' }
     }
           };
- request(options, function(error, response, body) {
+  request(options, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+      // request was success, should early return response to client
       res.sendStatus(200);
     } else {
       res.sendStatus(500);
     }
-
-
-
-
-
-    var tokenGeneration=new tokensFromClient();
-    tokenGeneration.Token=req.body.token;
-    tokenGeneration.save(function(err) {
     
-    if (err) {
-      sendJSONresponse(res, 404, err);
-    } else {
-     
-      sendJSONresponse(res, 200, {
-        "token is " : req.body.token
-      });
-    }
   });
-    
-   }
+    }
+   
 }
 
 module.exports.gettingTokensFromDb=function(req,res)
