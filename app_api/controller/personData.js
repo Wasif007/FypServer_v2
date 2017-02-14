@@ -18,13 +18,13 @@ module.exports.gettingDataPerson=function(req,res)
 
     query.exec(function (err, someValue) {
         if (err) return next(err);
-       value=someValue;
+       else{
+
+       }
     });
 	var message = {
-    to: "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX", // required fill with device token or topics
-    notification: {
-        title: 'Person Identication'
-    },
+    to: "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX",
+    
     data: {
         title: 'Naeem',
         body: 'Bhai'
