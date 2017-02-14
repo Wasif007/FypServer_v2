@@ -1,9 +1,8 @@
 var mongoose=require('mongoose');
 var tokensFromClient=mongoose.model('assignTokens');
-var express=require('express');
-var app=express();
-var http=require('http').Server(app);
-var io=require('socket.io')(http);
+
+
+
 
 var FCM = require('fcm-push');
  
@@ -66,14 +65,7 @@ module.exports.gettingFromFarhan=function(req,res)
 
 module.exports.gettingForSocket=function(req,res)
 {
-  io.on("connection",function(socket){
-console.log("Connected via socket.io");
-
-
-socket.emit("message",{
-  type:"Message"
-});
-});
+  
  
 
 return sendJSONresponse(res,200,{
