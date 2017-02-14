@@ -17,7 +17,7 @@ module.exports.gettingTokens=function(req,res)
 var message = {
     to: req.body.token, // required fill with device token or topics
     
-    notification: {
+    data: {
         title: 'Naeem',
         body: {name:'Bhai'}
     }
