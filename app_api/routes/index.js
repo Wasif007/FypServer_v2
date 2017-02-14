@@ -74,7 +74,7 @@ router.get('/assignDuty',ctrlAssigningDuties.assignedDutiesList);
 router.delete('/assignDuty',ctrlAssigningDuties.deleteAssignedDuties);
 
 //Getting Data From Algorithm
-router.post('/person',ctrlPersonIdentification.gettingForAdeel);
+router.post('/person',ctrlPersonIdentification.gettingFromFarhan);
 
 //Notifications
 router.post('/notifications',ctrlNotification.gettingTokens);
