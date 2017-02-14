@@ -1,7 +1,5 @@
 var mongoose=require('mongoose');
 var tokensFromClient=mongoose.model('assignTokens');
-var PORT=process.env.PORT || 300;
-
 var express=require('express');
 var app=express();
 var http=require('http').Server(app);
@@ -77,9 +75,7 @@ socket.emit("message",{
 });
 });
  
- http.listen(PORT,function(){
-  console.log("Server started");
-});
+
 return sendJSONresponse(res,200,{
   "Message":req.body.name
 })
