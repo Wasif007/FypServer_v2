@@ -65,13 +65,27 @@ fcm.send(message, function(err, response){
 
 module.exports.gettingTokensFromDb=function(req,res)
 {
-    
+    tokensFromClient.find({}, function(err, docs) {
+    if (!err){ 
+sendJSONresponse(res,200,docs);
+    } else {
+      throw err;
+    }
+});
   
  }
 
  module.exports.deletingTokensFromDb=function(req,res)
  {
-   
+   tokensFromClient.remove({}, function(err,removed) {
+    if(!err)
+    {
+     sendJSONresponse(res,200,{
+  "Message":" Deleted all data"
+})
+    }
+
+});
  }
 
  module.exports.sendingNotificationtoFcm=function(req,res)
