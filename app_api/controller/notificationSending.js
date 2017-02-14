@@ -7,11 +7,8 @@ var serverKey = 'AAAAKEUqUHQ:APA91bE12teqBTqSpZycw85IKyrGlzSAksoAWOlRI4NLRa51Wjn
 var fcm = new FCM(serverKey);
 
 var message = {
-    to: '"f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX"', // required fill with device token or topics
-    collapse_key: 'your_collapse_key', 
-    data: {
-        your_custom_data_key: 'your_custom_data_value'
-    },
+    to: "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX", // required fill with device token or topics
+    
     notification: {
         title: 'Title of your push notification',
         body: 'Body of your push notification'
@@ -24,7 +21,7 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingTokens=function(req,res)
 {
- 
+
 
 //callback style
 fcm.send(message, function(err, response){

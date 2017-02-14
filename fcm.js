@@ -1,14 +1,10 @@
 var FCM = require('fcm-push');
 
-var serverKey = 'AAAAKEUqUHQ:APA91bE12teqBTqSpZycw85IKyrGlzSAksoAWOlRI4NLRa51WjnM8acOmp5-KZRyEGw2L87Y0jfkSjwdPIzh4lL3owUz7bLw1JQAZL3v49r1Gg7km-DNheU1fP5ZF1IlaX6IdSONr7kT';
+var serverKey = 'AIzaSyBm7m_n6qYz9aY_lg0KBLIp021fOd83Bdc';
 var fcm = new FCM(serverKey);
 
 var message = {
-    to: '"f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX"', // required fill with device token or topics
-    collapse_key: 'your_collapse_key', 
-    data: {
-        your_custom_data_key: 'your_custom_data_value'
-    },
+    to: "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX",
     notification: {
         title: 'Title of your push notification',
         body: 'Body of your push notification'
