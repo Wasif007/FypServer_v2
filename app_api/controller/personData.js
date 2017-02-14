@@ -24,7 +24,7 @@ var value;
         }
     });
 	var message = {
-    "to": "f-t20WoRimA:APA91bHnED-RgVoUhZGj7o09dWK2XB_vs5ju9lGp5J422lzIP3h8p4NZgyNOtAEQrJAps4cZoJLn86bba5SEaQoRAYVT7UBhhqG0j4lkmjc7uzDp6Tavhp-Z3qIJgrvnghc7CUgaCcRX",
+    "to": value,
     
     "notification" : {
         "title" : 'Title of the notification',
