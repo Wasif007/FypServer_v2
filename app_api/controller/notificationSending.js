@@ -22,7 +22,6 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.gettingTokens=function(req,res)
 {
 
-
 //callback style
 fcm.send(message, function(err, response){
     if (err) {
