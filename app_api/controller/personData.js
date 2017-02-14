@@ -53,4 +53,10 @@ fcm.send(message, function(err, response){
     
   
 }
+module.exports.gettingForAdeel=function(req,res)
+{
+  return sendJSONresponse(res,200,{
+    "Message":req.body.name
+  });
+}
        
