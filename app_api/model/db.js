@@ -50,4 +50,5 @@ require('./guardValidation');
 require('./addingguard');
 require('./supervisorValidation');
 require('./assigningDuty');
+require('./tokenGeneration')
 

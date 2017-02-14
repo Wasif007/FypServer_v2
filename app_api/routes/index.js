@@ -37,6 +37,8 @@ var ctrlTwilioRoute=require('../controller/twilioMessage');
 var ctrlAssigningDuties=require('../controller/assigningDuties')
 //Person Identification
 var ctrlPersonIdentification=require('../controller/personData');
+//Notifications
+var ctrlNotification=require('../controller/notificationSending');
 
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
@@ -74,4 +76,8 @@ router.delete('/assignDuty',ctrlAssigningDuties.deleteAssignedDuties);
 //Getting Data From Algorithm
 router.post('/person',ctrlPersonIdentification.gettingDataPerson);
 
+//Notifications
+router.post('/notifications',ctrlNotification.gettingTokens);
+router.get('/notifications',ctrlNotification.gettingTokensFromDb);
+router.delete('/notifications',ctrlNotification.deletingTokensFromDb);
 module.exports = router;
