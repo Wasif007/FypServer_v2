@@ -34,8 +34,7 @@ fcm.send(message, function(err, response){
     } else {
         console.log("Successfully sent with response: ", response);
   return  sendJSONresponse(res,200,{
-      "Message":" Notification Send",
-      "som ":value
+      "Message":" Notification Send"
     });
     }
 });
