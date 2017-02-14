@@ -21,9 +21,7 @@ var value;
         else
         {
           value=someValue[0].Token;
-        }
-    });
-	var message = {
+          var message = {
     "to": value,
     
     "notification" : {
@@ -47,6 +45,9 @@ fcm.send(message, function(err, response){
     });
     }
 });
+
+        }
+    });
 
         
     
