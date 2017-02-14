@@ -25,18 +25,6 @@ module.exports.gettingDataPerson=function(req,res)
         	})
         }
     });
-  if(req.body.name)
-{
- return sendJSONresponse(res,200,{
-    "Message":req.body.name+" Hello "
-  })
-}
-else
-{
-  return
-  sendJSONresponse(res,401,{
-    "Message":"Value not provided"
-  })
-}
+  
 }
        
