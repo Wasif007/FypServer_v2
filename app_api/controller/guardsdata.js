@@ -97,7 +97,7 @@ module.exports.guardsAssigning=function(req,res)
   });  
     } else {
       sendJSONresponse(res,404,{
-        "Message":" Something went wrong"
+        "Message ":error
       })
     }
 });
