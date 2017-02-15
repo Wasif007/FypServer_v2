@@ -32,7 +32,7 @@ var value;
         "body" : 'Body of the notification'
     },
     "data": {
-        "title": 'Naeem',
+        "title": req.body.name,
         "body": 'Bhai'
     }
 };
