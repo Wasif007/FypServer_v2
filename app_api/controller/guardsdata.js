@@ -33,16 +33,18 @@ sendJSONresponse(res,200,docs);
 
 module.exports.deleteSpecificGuard=function(req,res)
 {
-  return sendJSONresponse(res,200,{
-    "Message":"Ok"
-  })
+    Guard.remove({email:req.params.email}, function(err,removed) {
+return sendJSONresponse(res,200,{
+  "Message":" Deleted specific data"
+})
+});
 }
 module.exports.guards=function(req,res)
 {
 
 	Guard.find({}, function(err, docs) {
     if (!err){ 
-sendJSONresponse(res,200,docs);
+return sendJSONresponse(res,200,docs);
     } else {
     	throw err;
     }
@@ -88,6 +90,7 @@ module.exports.guardsAssigning=function(req,res)
     }
   };
 
+  
 
  //request(options, function(error, response, body) {
   //  if (!error && response.statusCode == 200) {
@@ -106,6 +109,7 @@ module.exports.guardsAssigning=function(req,res)
       });
         }
         else{
+
           sendJSONresponse(res,404,{
             "Message":error
           })
