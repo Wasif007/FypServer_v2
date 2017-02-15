@@ -29,7 +29,7 @@ var value;
     
     "notification" : {
         "title" : 'PING Notification',
-        "body" : 'Supervisor Sending Notification'
+        "body" : req.body.name
     },
     "data": {
         "k1": req.body.name,
