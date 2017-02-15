@@ -85,14 +85,27 @@ module.exports.guardsAssigning=function(req,res)
 
  //request(options, function(error, response, body) {
   //  if (!error && response.statusCode == 200) {
-  //  guard.createdOn=moment(req.body.createdOn).format("DD-MM-YYYY");
+  // 
+   guard.createdOn=moment(req.body.createdOn).format("DD-MM-YYYY");
   guard.save(function(err) {
     if (err) {
-      sendJSONresponse(res, 404, err);
+     return sendJSONresponse(res, 404, err);
+     
     } else {
-      sendJSONresponse(res, 200, {
+       request(options,function(error,response,body){
+        if(!error && response.statusCode===200)
+        {
+        return sendJSONresponse(res, 200, {
         "Guard saved with data":guard
       });
+        }
+        else{
+          sendJSONresponse(res,404,{
+            "Message":error
+          })
+        }
+      })
+     
     }
   });  
    // } else {
