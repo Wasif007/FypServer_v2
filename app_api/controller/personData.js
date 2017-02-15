@@ -6,7 +6,7 @@ var tokensFromClient=mongoose.model('assignTokens');
 
 var FCM = require('fcm-push');
  
-var serverKey = 'AAAAHSygsvw:APA91bEqTlPBHbiov0G-dVs2KAXMprCm9bSHrYusLQHpnQI84ZuJgmfGAz_Nz_0he4yHKza0v7q_eyRwAKWovCiTLfyzjNvDOskXEoeyJ6qrPyLFeSSGXYBF0S48XkoXVOfGUpeLfuOF';
+var serverKey = 'AAAAgOYUnuU:APA91bFJwj4wbhbl6IS8Bz8pQtAQy_rSRBmPm0fXDcqL0h1-SeBFOfxnzy2m2LUaODV_EtB0zwMDhcCQngbRe3VhLcGSyWBx976FX-cSwdRa4HIoMYaUSLHqV1oft7Dv7Ag3MZG-P1VX';
 var fcm = new FCM(serverKey);
 
 
@@ -25,7 +25,7 @@ var value;
         {
           value=someValue[0].Token;
           var message = {
-    "to": 'cHrhAho78mc:APA91bGmJBA5WzWLMd4Vv1oC5RpPR7ybc6twrNRXmwz2vVhHO_6HXWo5A9TRV-Vxpjj-upA1BXZ0yhRVXrxKfD7pqtKADHpKyy7rEuKKrHsQYMWm0cIfx-Q0eM_uDXo7399TOFEGv3We',
+    "to": 'fuE87_zokMc:APA91bHnz3oDDaDwr2jGKMtTiyn1jfXNL0TaZslvZnpNDQq7_4R9JlAYFczXvmks1-dToOkhG-W3XdEREi_ERfD8Lgsst--ICt_zHGjVxN7evPbyIpTUBoLJorzKQ-S4O1RkomJRJwd3',
     
     "notification" : {
         "title" : 'PING Notification',
