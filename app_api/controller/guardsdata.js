@@ -83,9 +83,9 @@ module.exports.guardsAssigning=function(req,res)
   };
 
 
- request(options, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
-    guard.createdOn=moment(req.body.createdOn).format("DD-MM-YYYY");
+ //request(options, function(error, response, body) {
+  //  if (!error && response.statusCode == 200) {
+  //  guard.createdOn=moment(req.body.createdOn).format("DD-MM-YYYY");
   guard.save(function(err) {
     if (err) {
       sendJSONresponse(res, 404, err);
@@ -95,12 +95,12 @@ module.exports.guardsAssigning=function(req,res)
       });
     }
   });  
-    } else {
-      sendJSONresponse(res,404,{
-        "Message ":error
-      })
-    }
-});
+   // } else {
+   //   sendJSONresponse(res,404,{
+   //     "Message ":error
+   //   })
+   // }
+//});
     
 
 }
