@@ -16,7 +16,7 @@ return;
 }
   client.messages.create({
     body: req.body.code, 
-    to: req.body.to,
+    to: '+923214210283',
     from: '+15124025641'
     // mediaUrl: 'http://www.yourserver.com/someimage.png'
   }, function(err, data) {
