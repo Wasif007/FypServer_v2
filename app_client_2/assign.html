@@ -22,7 +22,7 @@
 
       <nav class="nav primary-nav">
                    <ul>
-                <li><a href="index.html">Home</a></li><!--
+                <li><a href="main.html">Home</a></li><!--
             --><li><a href="modules.html">Modules</a></li><!--
             --><li><a href="history.html">History</a></li><!--
             --><li><a href="register.html">Assign</a></li>
@@ -66,33 +66,44 @@
         
      
 
-        --> <form class="col-1-3" action="#" method="post">
-            
-          <img class="img-circle" src="sakhi.jpg"> 
+        --> <form class="col-1-3" action="//pingfyp.herokuapp.com/api/assignDuty" >
+            <img class="img-circle" src="sakhi.jpg">
 
           <fieldset class="register-group">
-             
+              
             <label>
             Select a Guard
-              <select name="Location" required>
-                <option value="1" selected>Adeel Jigar</option>
-                <option value="2">Wasif ILY</option>
-                <option value="3">Neema Kaala</option>
-                <option value="4">Sakhi KHOOBSURAT</option>
+              <select id="guards" name="guardName" action="//pingfyp.herokuapp.com/api/addingguard" required>
+                <option value="1" selected>Select a guard</option>
+               
                
               </select>
             </label>
 
-           
+           <label>
+              Email
+              <input id="email" type="text" name="guardUsername" placeholder="Select a Guard First" readonly  required>
+            </label>
 
             <label>
             Location
-              <select name="Location" required>
-                <option value="1" selected>FCSE</option>
-                <option value="2">FES</option>
-                <option value="3">FMSE</option>
-                <option value="4">FME</option>
-                <option value="5">Brabers</option>
+              <select id="location" name="location" required>
+                <option value="select" selected>select a Location</option>
+                <option value="FMCE">FES</option>
+                <option value="FMSE">FMSE</option>
+                <option value="FME">FME</option>
+                <option value="FEE">FEE</option>
+              </select>
+            </label>
+
+             <label>
+            Duty Timings
+              <select id="time" name="time" required>
+                <option value="1" selected>Select duty timings</option>
+                <option value="8:00 am to 4:00 pm">8:00 am to 4:00 pm</option>
+                <option value="4:00 pm to 12:00 am">4:00 pm to 12:00 am<</option>
+                <option value="12:00 am to 4:00 pm">12:00 am to 4:00 pm</option>
+               
               </select>
             </label>
 
@@ -118,11 +129,12 @@
                 <li><a href="index.html">Home</a></li><!--
             --><li><a href="modules.html">Modules</a></li><!--
             --><li><a href="history.html">History</a></li><!--
-            --><li><a href="register.html">Assign</a></li>
+            --><li><a href="assign.html">Assign</a></li>
             </ul>
       </nav>
 
     </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="assign.js"></script>
   </body>
 </html>
