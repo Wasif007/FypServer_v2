@@ -28,8 +28,8 @@ var value;
     "to": 'cHrhAho78mc:APA91bGmJBA5WzWLMd4Vv1oC5RpPR7ybc6twrNRXmwz2vVhHO_6HXWo5A9TRV-Vxpjj-upA1BXZ0yhRVXrxKfD7pqtKADHpKyy7rEuKKrHsQYMWm0cIfx-Q0eM_uDXo7399TOFEGv3We',
     
     "notification" : {
-        "title" : 'Title of the notification',
-        "body" : 'Body of the notification'
+        "title" : 'PING Notification',
+        "body" : 'Supervisor Sending Notification'
     },
     "data": {
         "k1": req.body.name,
