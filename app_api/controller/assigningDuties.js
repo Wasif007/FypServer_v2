@@ -37,7 +37,10 @@ module.exports.assigningDuty=function(req,res)
 		|| !req.body.time || !req.body.location ||!req.body.guardUsername)
 	{
 		sendJSONresponse(res,404,{
-			"message":"Required fields are not provided"
+			"message":"Required fields are not provided"+" "+
+			req.body.supervisorName +" "+req.body.guardName 
+		+" "+req.body.supervisorImageUrl  +" "+req.body.guardImageUrl 
+		+" "+req.body.time +" "+req.body.location+" "+req.body.guardUsername
 		})
 		return;
 	}	
