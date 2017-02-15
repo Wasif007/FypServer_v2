@@ -91,7 +91,7 @@ module.exports.guardsAssigning=function(req,res)
   };
 
   var options_2={
-    uri:'https://pingfyp.herokuapp.com/api/addingguardDelete/'+req.body.email
+    uri:'https://pingfyp.herokuapp.com/api/addingguardDelete/'+req.body.email,
    method: 'DELETE',
    json:{}
   }  
