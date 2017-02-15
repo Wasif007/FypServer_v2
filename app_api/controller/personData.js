@@ -32,8 +32,8 @@ var value;
         "body" : 'Body of the notification'
     },
     "data": {
-        "title": req.body.name,
-        "body": 'Bhai'
+        "k1": req.body.name,
+        "k2": 'Bhai'
     }
 };
 //callback style
