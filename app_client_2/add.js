@@ -12,8 +12,7 @@ $(".col-1-3").submit(function(){
         data: formData,
         async: false,
         success: function (data) {
-            alert(data);
-            console.log(data);
+      alert("SUCCESS");
         },
 
          error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -27,3 +26,8 @@ $(".col-1-3").submit(function(){
     return false;
 });
 
+ $('.col-1-3 input#preview').change(function(e) {
+     var filename = $('input[type=file]').val().split('\\').pop();
+        console.log(filename);
+         $('.col-1-3 img').attr("src", filename);
+ });

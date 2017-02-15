@@ -21,8 +21,7 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
  $(".col-1-3").submit(function (e) {
     e.preventDefault();
    
-   
-
+  
    var dataJson= {
 	"supervisorName":"Wasif",
 	"guardName":$('.col-1-3 select#guards ').val(),
@@ -46,8 +45,8 @@ console.log(dataJson);
         contentType: 'application/json',
         async: false,
         success: function (data) {
-            alert(data);
-            console.log(data);
+            alert("SUCCESS");
+    
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {

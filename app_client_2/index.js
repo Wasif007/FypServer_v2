@@ -1,6 +1,6 @@
 /*globals $*/
 
- $(".form").submit(function (e) {
+ $(".form input#lg").click(function (e) {
     e.preventDefault();
    
     console.log($('.form input#email ').val());
@@ -12,22 +12,21 @@
 	
 };
 
-console.log(dataJson);
+
 
   //  console.log(formData);
 
     $.ajax({
 
 
-        url: $(this).attr("action"),
+        url: $('.form').attr("action"),
         type: 'POST',
         data: JSON.stringify(dataJson),
         contentType: 'application/json',
         async: false,
         success: function (data) {
             window.location.replace("main.html");
-            alert(data);
-            console.log(data);
+             alert("SUCCESS");
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -40,4 +39,9 @@ console.log(dataJson);
     });
 
     return false;
+});
+
+$(".form input#sg").click(function (e) {
+    e.preventDefault();
+    window.location.replace("signup.html");
 });

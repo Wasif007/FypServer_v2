@@ -293,6 +293,12 @@ table {
      Primary Header
      ========================================
     */
+
+   .img { float: left;
+  width: 30%;
+  height: 100px;
+  background: #555;
+  }
     .logo {
         border-top:4px solid #648880;
         padding: 40px 0 22px 0; 

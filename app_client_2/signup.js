@@ -1,19 +1,18 @@
 /*globals $*/
 
-$(".form").submit(function(){
-
+$(".form ").submit(function(e){
+    e.preventDefault();
     var formData = new FormData($(this)[0]);
-    console.log(formData);
+ 
     $.ajax({
         
         
-        url: $(this).attr("action"),
+        url: $('.form').attr("action"),
         type: 'POST',
         data: formData,
         async: false,
         success: function (data) {
-            alert(data);
-            console.log(data);
+            alert("SUCCESS");
         },
 
          error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -26,3 +25,14 @@ $(".form").submit(function(){
 
     return false;
 });
+
+$(".form input#lg").click(function(e){
+    e.preventDefault();
+    window.location.replace("index.html");
+});
+
+ $('.form input#preview').change(function(e) {
+     var filename = $('input[type=file]').val().split('\\').pop();
+        console.log(filename);
+         $('.form img').attr("src", filename);
+ });
