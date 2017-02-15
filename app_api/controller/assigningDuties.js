@@ -51,8 +51,8 @@ module.exports.assigningDuty=function(req,res)
 	if(req.body.location==='FCSE')
 	{
 		guardAssigning.location="Faculty of Computer Science";
-		guardAssigning.lat="34.069349";
-		guardAssigning.lng="72.644918";
+		guardAssigning.lat="34.069149";
+		guardAssigning.lng="72.643118";
 	}
 	else if(req.body.location==='FEE')
 	{
@@ -63,8 +63,8 @@ module.exports.assigningDuty=function(req,res)
 	else if(req.body.location==='FCME')
 	{
 		guardAssigning.location="Faculty of Chemical Engineering";
-	guardAssigning.lat="34.1111";
-		guardAssigning.lng="72.7777";
+	guardAssigning.lat="34.069120";
+		guardAssigning.lng="72.643239";
 	}
 	else if(req.body.location==='FME')
 	{
