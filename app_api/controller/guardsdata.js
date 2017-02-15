@@ -33,7 +33,9 @@ sendJSONresponse(res,200,docs);
 
 module.exports.deleteSpecificGuard=function(req,res)
 {
-  
+  return sendJSONresponse(res,200,{
+    "Message":"Ok"
+  })
 }
 module.exports.guards=function(req,res)
 {

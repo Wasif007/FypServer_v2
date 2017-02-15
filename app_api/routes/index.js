@@ -50,7 +50,7 @@ router.delete('/guardListDelete',ctrlGettingGuardValidation.guardDeleteList);
 router.get('/addingguard',ctrlGettingGuardData.guards);
 router.post('/addingguard',upload,ctrlGettingGuardData.guardsAssigning);
 router.delete('/addingguardDelete',ctrlGettingGuardData.deleteguardList);
-router.delete('/addingguardDelete/:email'.ctrlGettingGuardData.deleteSpecificGuard);
+router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGuard);
 
 //Signup Login Supervisor 
 router.post('/supervisorLogin',ctrlSupervisorValidation.login);
