@@ -24,7 +24,7 @@ return;
       console.error('Could not notify administrator');
       console.error(err);
       sendJSONresponse(res,404,{
-        "Message":err
+        "Messsage":err
       });
       return;
 
