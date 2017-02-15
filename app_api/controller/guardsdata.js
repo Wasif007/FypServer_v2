@@ -90,7 +90,11 @@ module.exports.guardsAssigning=function(req,res)
     }
   };
 
-  
+  var options_2={
+    uri:'https://pingfyp.herokuapp.com/api/addingguardDelete/'+req.body.email
+   method: 'DELETE',
+   json:{}
+  }  
 
  //request(options, function(error, response, body) {
   //  if (!error && response.statusCode == 200) {
@@ -109,10 +113,12 @@ module.exports.guardsAssigning=function(req,res)
       });
         }
         else{
-
+          request(options,function(error,response,body){
           sendJSONresponse(res,404,{
             "Message":error
+          })  
           })
+          
         }
       })
      
