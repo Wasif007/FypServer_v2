@@ -40,7 +40,9 @@ module.exports.assigningDuty=function(req,res)
 			"message":"Required fields are not provided"
 		})
 		return;
-	}	
+	}
+
+		
 	var guardAssigning=new AssignGuard();
 	guardAssigning.supervisorName=req.body.supervisorName;
 	guardAssigning.guardImageUrl=req.body.guardImageUrl;
@@ -51,26 +53,26 @@ module.exports.assigningDuty=function(req,res)
 	if(req.body.location==='FCSE')
 	{
 		guardAssigning.location="Faculty of Computer Science";
-		guardAssigning.lat="34.069149";
-		guardAssigning.lng="72.643118";
+		guardAssigning.lat="34.0691";
+		guardAssigning.lng="72.6441";
 	}
 	else if(req.body.location==='FEE')
 	{
 		guardAssigning.location="Faculty of Electronic Engineering";
-	guardAssigning.lat="34.099110";
-		guardAssigning.lng="72.643249";
+	guardAssigning.lat="34.0671";
+		guardAssigning.lng="72.6400";
 	}
 	else if(req.body.location==='FCME')
 	{
 		guardAssigning.location="Faculty of Chemical Engineering";
-	guardAssigning.lat="34.069120";
-		guardAssigning.lng="72.643239";
+	guardAssigning.lat="34.0661";
+		guardAssigning.lng="72.6401";
 	}
 	else if(req.body.location==='FME')
 	{
 		guardAssigning.location="Faculty of Mechnical Engineering";
-	guardAssigning.lat="34.069349";
-		guardAssigning.lng="72.644918";
+	guardAssigning.lat="34.0660";
+		guardAssigning.lng="72.6402";
 	}
 	guardAssigning.save(function(err) {
     if (err) {
