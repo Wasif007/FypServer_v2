@@ -2,6 +2,8 @@ var mongoose=require('mongoose');
 var Guard=mongoose.model('Guard');
 var moment = require('moment');
 moment().format();
+var request=require('request');
+
 
 var sendJSONresponse = function(res, status, content) {
   res.status(status);
@@ -69,8 +71,22 @@ module.exports.guardsAssigning=function(req,res)
 	guard.code=req.body.code;
 	guard.imageUrl=image_url_cloudinary;
 	guard.home_address=req.body.home_address;
+ 
+
+  var options = {
+    uri: 'https://pingfyp.herokuapp.com/api/twilioMessage',
+    method: 'POST',
+    json: {
+      'to':req.body.phone,
+      'code':req.body.code
+    }
+  };
+
+
+ request(options, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
     guard.createdOn=moment(req.body.createdOn).format("DD-MM-YYYY");
-	guard.save(function(err) {
+  guard.save(function(err) {
     if (err) {
       sendJSONresponse(res, 404, err);
     } else {
@@ -78,6 +94,13 @@ module.exports.guardsAssigning=function(req,res)
         "Guard saved with data":guard
       });
     }
-  });
+  });  
+    } else {
+      sendJSONresponse(res,404,{
+        "Message":" Something went wrong"
+      })
+    }
+});
+    
 
 }
