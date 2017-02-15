@@ -30,7 +30,11 @@ sendJSONresponse(res,200,docs);
   }
 
 }
-       
+
+module.exports.deleteSpecificGuard=function(req,res)
+{
+  
+}
 module.exports.guards=function(req,res)
 {
 

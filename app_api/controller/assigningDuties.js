@@ -57,7 +57,7 @@ module.exports.assigningDuty=function(req,res)
 	else if(req.body.location==='FEE')
 	{
 		guardAssigning.location="Faculty of Electronic Engineering";
-	guardAssigning.lat="34.069100";
+	guardAssigning.lat="34.099110";
 		guardAssigning.lng="72.643249";
 	}
 	else if(req.body.location==='FCME')
