@@ -43,7 +43,7 @@ var ctrlNotification=require('../controller/notificationSending');
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
 router.post('/guardLogin', ctrlGettingGuardValidation.login);
-router.get('/guardList',ctrlGettingGuardValidation.guardAddList);
+router.get('/guardList',auth,ctrlGettingGuardValidation.guardAddList);
 router.delete('/guardListDelete',ctrlGettingGuardValidation.guardDeleteList);
 
 //GuardsList

@@ -52,7 +52,7 @@ supervisorSchema.methods.generateJwt=function(){
     phone:this.phone,
     home_address:this.home_address,
     exp: parseInt(expiry.getTime() / 1000),
-  }, process.env.JWT_SECRET); 
+  }, process.env.JWT_SECRET_2); 
 
 }
 supervisorSchema.plugin(uniqueValidator);
