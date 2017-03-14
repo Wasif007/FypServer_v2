@@ -21,7 +21,7 @@ var upload = multer({ //multer settings
 
 var jwt = require('express-jwt');
 var auth = jwt({
-  secret: process.env.JWT_SECRET,
+  secret: process.env.JWT_SECRET_2,
   userProperty: 'payload'
 });
 
@@ -43,7 +43,7 @@ var ctrlNotification=require('../controller/notificationSending');
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
 router.post('/guardLogin', ctrlGettingGuardValidation.login);
-router.get('/guardList',auth,ctrlGettingGuardValidation.guardAddList);
+router.get('/guardList',ctrlGettingGuardValidation.guardAddList);
 router.delete('/guardListDelete',ctrlGettingGuardValidation.guardDeleteList);
 
 //GuardsList
@@ -55,7 +55,7 @@ router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGua
 //Signup Login Supervisor 
 router.post('/supervisorLogin',ctrlSupervisorValidation.login);
 router.post('/supervisorSignup',upload,ctrlSupervisorValidation.signup);
-router.get('/supervisorList',ctrlSupervisorValidation.supervisorList);
+router.get('/supervisorList',auth,ctrlSupervisorValidation.supervisorList);
 router.delete('/supervisorDelete',ctrlSupervisorValidation.deletesupervisorList);
 
 
