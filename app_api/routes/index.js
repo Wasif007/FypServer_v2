@@ -20,8 +20,12 @@ var upload = multer({ //multer settings
                 }).single('file');
 
 var jwt = require('express-jwt');
-var auth = jwt({
+var auth_supervisor = jwt({
   secret: process.env.JWT_SECRET_2,
+  userProperty: 'payload'
+});
+var auth_guard = jwt({
+  secret: process.env.JWT_SECRET,
   userProperty: 'payload'
 });
 
@@ -43,8 +47,8 @@ var ctrlNotification=require('../controller/notificationSending');
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
 router.post('/guardLogin', ctrlGettingGuardValidation.login);
-router.get('/guardList',ctrlGettingGuardValidation.guardAddList);
-router.delete('/guardListDelete',ctrlGettingGuardValidation.guardDeleteList);
+router.get('/guardList',auth_guard,ctrlGettingGuardValidation.guardAddList);
+router.delete('/guardListDelete',auth_guard,ctrlGettingGuardValidation.guardDeleteList);
 
 //GuardsList
 router.get('/addingguard',ctrlGettingGuardData.guards);
@@ -55,8 +59,8 @@ router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGua
 //Signup Login Supervisor 
 router.post('/supervisorLogin',ctrlSupervisorValidation.login);
 router.post('/supervisorSignup',upload,ctrlSupervisorValidation.signup);
-router.get('/supervisorList',auth,ctrlSupervisorValidation.supervisorList);
-router.delete('/supervisorDelete',ctrlSupervisorValidation.deletesupervisorList);
+router.get('/supervisorList',auth_supervisor,ctrlSupervisorValidation.supervisorList);
+router.delete('/supervisorDelete',auth_supervisor,ctrlSupervisorValidation.deletesupervisorList);
 
 
 //Getting Guard Name
