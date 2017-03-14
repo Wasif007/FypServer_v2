@@ -48,6 +48,9 @@ supervisorSchema.methods.generateJwt=function(){
     _id: this._id,
     email: this.email,
     name: this.name,
+    imageUrl:this.imageUrl,
+    phone:this.phone,
+    home_address:this.home_address,
     exp: parseInt(expiry.getTime() / 1000),
   }, process.env.JWT_SECRET); 
 
