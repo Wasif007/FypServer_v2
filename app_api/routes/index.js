@@ -59,7 +59,7 @@ router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGua
 //Signup Login Supervisor 
 router.post('/supervisorLogin',ctrlSupervisorValidation.login);
 router.post('/supervisorSignup',upload,ctrlSupervisorValidation.signup);
-router.get('/supervisorList',ctrlSupervisorValidation.supervisorList);
+router.get('/supervisorList',auth_supervisor,ctrlSupervisorValidation.supervisorList);
 router.delete('/supervisorDelete',auth_supervisor,ctrlSupervisorValidation.deletesupervisorList);
 
 
