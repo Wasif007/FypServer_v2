@@ -26,7 +26,7 @@ var value;
           value=someValue[0].Token;
           var message = {
     "to": 'fuE87_zokMc:APA91bHnz3oDDaDwr2jGKMtTiyn1jfXNL0TaZslvZnpNDQq7_4R9JlAYFczXvmks1-dToOkhG-W3XdEREi_ERfD8Lgsst--ICt_zHGjVxN7evPbyIpTUBoLJorzKQ-S4O1RkomJRJwd3',
-    
+    'registration_ids': ['eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1OGRjMThiOWIzZjgwZjAwMTA1NmMxMzMiLCJlbWFpbCI6IndAaG90bWFpbC5jb20iLCJuYW1lIjoid2FzaWYiLCJpbWFnZVVybCI6Imh0dHA6Ly9yZXMuY2xvdWRpbmFyeS5jb20vd2FzaWYwMDcvaW1hZ2UvdXBsb2FkL3YxNDkwODE5MjU3L3Bpbmdmb2xkZXIvZmlzN3Y1bnhnenR1YmRmZnhpMWguanBnIiwicGhvbmUiOiIwMzMxNDU3MDI4MCIsImhvbWVfYWRkcmVzcyI6InJlaG1hbiBwYXJrIGd1bGJlcmcgIiwiZXhwIjoxNDkxNDI0MDU3LCJpYXQiOjE0OTA4MTkyNTd9.8InVaIFo9FojpaACZDkPtNttgbq5cjViJuEZMzEhfVg'],
     "notification" : {
         "title" : 'PING Notifications',
         "body" : req.body.name
