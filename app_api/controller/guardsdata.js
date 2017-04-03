@@ -12,7 +12,7 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingData=function(req,res)
 {
-  if(req.params.guardName===null)
+  if(req.params.guardName==="")
   {
 return sendJSONresponse(res,404,{
   "Message":"Provide name please"
