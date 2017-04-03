@@ -15,11 +15,12 @@ module.exports.gettingData=function(req,res)
 
 	 if(req.params.guardName)
   {
-     console.log(req.params.guardName);
-  console.log("Hello");
+
   Guard.findOne({name:req.params.guardName}, function(err, docs) {
     if (!err){ 
-sendJSONresponse(res,200,docs);
+sendJSONresponse(res,200,{
+  "Message":req.params.guardName+" name"
+});
     } else {
 sendJSONresponse(res,404,{
 "Message":"Something Went Wrong"
