@@ -24,7 +24,7 @@ module.exports.gettingData=function(req,res)
         "Message":"No user found"
       })
     }
-    if (!err){ 
+    if (docs){ 
 return sendJSONresponse(res,200,docs);
     } else {
  return sendJSONresponse(res,404,{
@@ -46,6 +46,7 @@ module.exports.deleteSpecificGuard=function(req,res)
 {
   if(req.params.email)
   {
+
     Guard.remove({email:req.params.email}, function(err,removed) {
 if(!removed)
 {
@@ -53,7 +54,7 @@ if(!removed)
     "Message":"No such name found"
   });
 }
-if(!err)
+if(removed)
 {
 return sendJSONresponse(res,200,{
   "Message":"Deleted specific data"
