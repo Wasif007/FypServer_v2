@@ -114,7 +114,7 @@ module.exports.guardsAssigning=function(req,res)
 {
 	var image_url_cloudinary;
     image_url_cloudinary=req.file.url;
-            if(req.file.url===undefined || req.file.url===null)
+            if(req.file===undefined || req.file===null)
             {
               return sendJSONresponse(res,401,{
                 "Message":"Provide all required fields"
