@@ -16,7 +16,6 @@ module.exports.gettingData=function(req,res)
 	 if(req.params.guardName)
   
   {
-
   Guard.findOne({name:req.params.guardName}, function(err, docs) {
     if(!docs)
     {
