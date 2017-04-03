@@ -56,7 +56,7 @@ if(!removed)
 if(!err)
 {
 return sendJSONresponse(res,200,{
-  "Message":" Deleted specific data"
+  "Message":"Deleted specific data"
 })
 
 }
@@ -80,7 +80,9 @@ module.exports.guards=function(req,res)
     if (!err){ 
 return sendJSONresponse(res,200,docs);
     } else {
-    	throw err;
+    	sendJSONresponse(res,401,{
+        "Message":err
+      });
     }
 });
 }
