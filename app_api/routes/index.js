@@ -65,6 +65,8 @@ router.delete('/supervisorDelete',auth_supervisor,ctrlSupervisorValidation.delet
 
 //Getting Guard Name
 router.get('/guardData/:guardName',ctrlGettingGuardData.gettingData);
+router.get('/guardData',ctrlGettingGuardData.guards);
+
 
 //Getting Supervisor Name
 router.get('/supervisorName/:supervisorEmail',ctrlSupervisorValidation.gettingName);
