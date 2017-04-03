@@ -23,6 +23,12 @@ return sendJSONresponse(res,404,{
   {
 
   Guard.findOne({name:req.params.guardName}, function(err, docs) {
+    if(!docs)
+    {
+      return sendJSONresponse(res,401,{
+        "Message":"No user found"
+      })
+    }
     if (!err){ 
 return sendJSONresponse(res,200,docs);
     } else {
