@@ -12,7 +12,7 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingData=function(req,res)
 {
-  
+
 	 if(req.params.guardName)
   
   {
@@ -44,10 +44,21 @@ return sendJSONresponse(res,200,docs);
 
 module.exports.deleteSpecificGuard=function(req,res)
 {
+  
     Guard.remove({email:req.params.email}, function(err,removed) {
+if(!removed)
+{
+  return sendJSONresponse(res,401,{
+    "Message":"No such name found"
+  });
+}
+if(!err)
+{
 return sendJSONresponse(res,200,{
   "Message":" Deleted specific data"
 })
+
+}
 });
 }
 module.exports.guards=function(req,res)
