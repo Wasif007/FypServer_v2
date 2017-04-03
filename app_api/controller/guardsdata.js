@@ -115,7 +115,7 @@ module.exports.guardsAssigning=function(req,res)
 	var image_url_cloudinary;
     image_url_cloudinary=req.file.url;
             
-	if(!req.body.email || !req.body.home_address || !req.body.phone  || !req.file.url || !req.body.code || !req.body.name)
+	if(!req.body.email || !req.body.home_address || !req.body.phone  || !image_url_cloudinary || !req.body.code || !req.body.name)
 	{
 		sendJSONresponse(res,404,{
 			"message":"Email phone and name are required fields"
