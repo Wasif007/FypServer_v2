@@ -13,6 +13,7 @@ var sendJSONresponse = function(res, status, content) {
 module.exports.gettingData=function(req,res)
 {
   console.log(req.params.guardName);
+  console.log("Hello");
 	 if(req.params.guardName)
   {
   Guard.findOne({name:req.params.guardName}, function(err, docs) {
