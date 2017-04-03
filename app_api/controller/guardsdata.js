@@ -12,24 +12,7 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingData=function(req,res)
 {
-  if(req.params.guardName===undefined)
-  {
-return sendJSONresponse(res,404,{
-  "Message":"Provide name please"
-})
-  }
-  if(req.params.guardName==="")
-  {
-return sendJSONresponse(res,404,{
-  "Message":"Provide name please"
-})
-  }
-  if(req.params.guardName==null)
-  {
-return sendJSONresponse(res,404,{
-  "Message":"Provide name please"
-})
-  }
+  
 	 if(req.params.guardName)
   
   {
