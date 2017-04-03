@@ -18,14 +18,16 @@ module.exports.gettingData=function(req,res)
     if (!err){ 
 sendJSONresponse(res,200,docs);
     } else {
-      throw err;
+sendJSONresponse(res,404,{
+"Message":"Something Went Wrong"
+});
     }
 });
   }
   else
   {
     sendJSONresponse(res,404,{
-      "Message":"eRROR"
+      "Message":"Name provided is not in DataBase"
     })
   }
 
