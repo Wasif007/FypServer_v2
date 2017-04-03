@@ -18,6 +18,18 @@ return sendJSONresponse(res,404,{
   "Message":"Provide name please"
 })
   }
+  if(req.params.guardName==="")
+  {
+return sendJSONresponse(res,404,{
+  "Message":"Provide name please"
+})
+  }
+  if(req.params.guardName==null)
+  {
+return sendJSONresponse(res,404,{
+  "Message":"Provide name please"
+})
+  }
 	 if(req.params.guardName)
   
   {
