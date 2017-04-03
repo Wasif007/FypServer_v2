@@ -112,21 +112,22 @@ sendJSONresponse(res,200,{
 
 module.exports.guardsAssigning=function(req,res)
 {
-	var image_url_cloudinary;
-    image_url_cloudinary=req.file.url;
-            if(req.file===undefined || req.file===null)
+	        if(req.file===undefined || req.file===null)
             {
               return sendJSONresponse(res,401,{
                 "Message":"Provide all required fields"
               })
             }
-	if(!req.body.email || !req.body.home_address || !req.body.phone  || !image_url_cloudinary || !req.body.code || !req.body.name)
+	if(!req.body.email || !req.body.home_address || !req.body.phone  || !req.file.url || !req.body.code || !req.body.name)
 	{
 		sendJSONresponse(res,401,{
 			"Message":"Provide all required fields"
 		})
 		return;
 	}	
+  var image_url_cloudinary;
+    image_url_cloudinary=req.file.url;
+    
 	var guard=new Guard();
 	guard.email=req.body.email;
 	guard.phone=req.body.phone;
