@@ -19,7 +19,7 @@ return sendJSONresponse(res,404,{
 })
   }
 	 if(req.params.guardName)
-  }
+  
   {
 
   Guard.findOne({name:req.params.guardName}, function(err, docs) {
