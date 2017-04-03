@@ -44,7 +44,8 @@ return sendJSONresponse(res,200,docs);
 
 module.exports.deleteSpecificGuard=function(req,res)
 {
-  
+  if(req.params.email)
+  {
     Guard.remove({email:req.params.email}, function(err,removed) {
 if(!removed)
 {
@@ -59,7 +60,18 @@ return sendJSONresponse(res,200,{
 })
 
 }
+else{
+  return sendJSONresponse(res,401,{
+    "Message":err
+  })
+}
 });
+}
+else{
+  sendJSONresponse(res,401,{
+    "Message":"Provide something to delete"
+  })
+}
 }
 module.exports.guards=function(req,res)
 {
