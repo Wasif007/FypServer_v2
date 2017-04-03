@@ -46,8 +46,15 @@ module.exports.deleteSpecificGuard=function(req,res)
 {
   if(req.params.email)
   {
-
-    Guard.remove({email:req.params.email}, function(err,removed) {
+  Guard.findOne({email:req.params.email}, function(err, docs) {
+    if(!docs)
+    {
+      return sendJSONresponse(res,401,{
+        "Message":"No user found"
+      })
+    }
+    if (docs){ 
+       Guard.remove({email:req.params.email}, function(err,removed) {
 if(!removed)
 {
   return sendJSONresponse(res,401,{
@@ -67,6 +74,13 @@ else{
   })
 }
 });
+    } else {
+ return sendJSONresponse(res,404,{
+"Message":"Something Went Wrong"
+});
+    }
+});
+   
 }
 else{
   sendJSONresponse(res,401,{
