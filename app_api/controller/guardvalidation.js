@@ -17,25 +17,24 @@ module.exports.signup=function(req,res)
 {
 if(!req.body.code || !req.body.password || !req.body.email)
 {
-sendJSONresponse(res,404,{
-  "message":"Security code Password and Email are required Fields"
+sendJSONresponse(res,401,{
+  "message":"All required Fields are not provided"
 });
 return;
 }
-console.log(req.body.code+" "+req.body.email);
 Guard.findOne({"email": req.body.email,
 "code":req.body.code}, function (err, doc){
   if(err)
   {
-    sendJSONresponse(res,404,{
-      "message":err
+    sendJSONresponse(res,401,{
+      "Message":err
     });
     return;
   }
   else if(doc===null)
   {
-    sendJSONresponse(res,404,{
-      "message":"Code or Email doesnot matches"
+    sendJSONresponse(res,401,{
+      "Message":"Security-Code or Email doesnot matches"
     })
     return;
   }
