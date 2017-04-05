@@ -17,7 +17,15 @@ var sendJSONresponse = function(res, status, content) {
 
 module.exports.gettingDataPerson=function(req,res)
 {
+  if(!req.body.name || !req.body.lat || !req.body.lng || !req.body.faculty)
+  {
+    sendJSONresponse(res,401,{
+      "Message":"Required Fields are not provided"
+    });
+    return;
+    }
     var query = tokensFromClient.find({}).select('Token -_id');
+  
 var value;
     query.exec(function (err, someValue) {
         if (err) return next(err);
