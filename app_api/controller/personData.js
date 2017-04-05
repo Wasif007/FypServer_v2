@@ -28,7 +28,7 @@ var value;
     "to": 'fuE87_zokMc:APA91bHnz3oDDaDwr2jGKMtTiyn1jfXNL0TaZslvZnpNDQq7_4R9JlAYFczXvmks1-dToOkhG-W3XdEREi_ERfD8Lgsst--ICt_zHGjVxN7evPbyIpTUBoLJorzKQ-S4O1RkomJRJwd3',
     "notification" : {
         "title" : 'PING Notifications',
-        "body" : req.body.name
+        "body" : req.body.name+req.body.faculty+req.body.lat+req.body.lng
     },
     "data": {
         "k1": req.body.name,
