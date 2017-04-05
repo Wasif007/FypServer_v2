@@ -47,7 +47,7 @@ Guard.findOne({"email": req.body.email,
 guardValidationAdd.save(function(err) {
     var token;
     if (err) {
-      sendJSONresponse(res, 404, err);
+      sendJSONresponse(res, 401, err);
     } else {
       token = guardValidationAdd.generateJwt();
       sendJSONresponse(res, 200, {
@@ -77,8 +77,10 @@ module.exports.guardDeleteList=function(req,res)
     if(!err)
     {
      sendJSONresponse(res,200,{
-  "Message":" Deleted all data"
-})
+  "Message":"Deleted all data"
+})else{
+      throw err;
+     }
     }
 
 });
@@ -88,8 +90,8 @@ module.exports.login=function(req,res)
 { 
 
   if(!req.body.email || !req.body.password) {
-    sendJSONresponse(res, 400, {
-      "message": "Email and password are requireds"
+    sendJSONresponse(res, 401, {
+      "Message": "All required Fields are not provided"
     });
     return;
   }
@@ -98,7 +100,7 @@ module.exports.login=function(req,res)
     var token;
 
     if (err) {
-      sendJSONresponse(res, 404, err);
+      sendJSONresponse(res, 401, err);
       return;
     }
 
@@ -113,16 +115,7 @@ module.exports.login=function(req,res)
   })(req, res);
 
 }
-module.exports.guardAddList=function(req,res)
-{
- guardValidation.find({}, function(err, docs) {
-    if (!err){ 
-sendJSONresponse(res,200,docs);
-    } else {
-      throw err;
-    }
-});
-}
+
 
 
 
