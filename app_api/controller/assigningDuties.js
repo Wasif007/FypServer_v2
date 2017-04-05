@@ -71,7 +71,7 @@ module.exports.assigningDuty=function(req,res)
 	else if(req.body.location==='FME')
 	{
 		guardAssigning.location="Faculty of Mechnical Engineering";
-	guardAssigning.lat="34.0660";
+		guardAssigning.lat="34.0660";
 		guardAssigning.lng="72.6402";
 	}
 	guardAssigning.save(function(err) {
