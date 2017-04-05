@@ -35,7 +35,7 @@ module.exports.signup=function(req,res)
 if(!req.body.name || !req.body.password || !req.body.home_address ||!req.body.email || !req.file.url || !req.body.phone )
 {
 sendJSONresponse(res,404,{
-	"message":"Username,Password,Image,home_address and Email are required Fields"
+	"message":"Required "
 });
 return;
 }

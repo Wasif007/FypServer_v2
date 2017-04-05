@@ -35,7 +35,7 @@ var value;
         "k2": 'Bhai',
         "k3":req.body.lat,
         "k4":req.body.lng,
-        "k5":req.body.loc
+        "k5":req.body.faculty
     }
 };
 //callback style
