@@ -23,7 +23,7 @@ return;
     if (err) {
       console.error('Could not notify administrator');
       console.error(err);
-      sendJSONresponse(res,404,{
+      sendJSONresponse(res,401,{
         "Messsage":err
       });
       return;
