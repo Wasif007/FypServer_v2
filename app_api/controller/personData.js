@@ -24,23 +24,16 @@ module.exports.gettingDataPerson=function(req,res)
     });
     return;
     }
-    var query = tokensFromClient.find({}).select('Token -_id');
   
-var value;
-    query.exec(function (err, someValue) {
-        if (err) return next(err);
-        else
-        {
-          value=someValue[0].Token;
+        
           var message = {
     "to": 'e5biNgrFT9o:APA91bGBtZLMAsatq_HcWZrl6R77nsosnl_rDKjkShsbyHpsWmzUmyWiphcLonftRQ4BtQPypFu-hET1bsa6ex6nFgQ3rIdIMTzZuhKzB6QobyKN51Fax9RTnZP1lMxmvYh8XDPmJLKy',
     "notification" : {
         "title" : 'PING Notifications',
-        "body" : req.body.name+req.body.faculty+req.body.lat+req.body.lng
+        "body" : req.body.name
     },
     "data": {
         "name": req.body.name,
-        
         "lat":req.body.lat,
         "lng":req.body.lng,
         "faculty":req.body.faculty
@@ -59,12 +52,6 @@ fcm.send(message, function(err, response){
     }
 });
 
-        }
-    });
-
-        
-    
-  
 }
 module.exports.gettingFromFarhan=function(req,res)
 {
@@ -76,8 +63,6 @@ module.exports.gettingFromFarhan=function(req,res)
 module.exports.gettingForSocket=function(req,res)
 {
   
- 
-
 return sendJSONresponse(res,200,{
   "Message":req.body.name
 })
