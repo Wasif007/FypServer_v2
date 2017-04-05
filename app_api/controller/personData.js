@@ -31,11 +31,11 @@ var value;
         "body" : req.body.name+req.body.faculty+req.body.lat+req.body.lng
     },
     "data": {
-        "k1": req.body.name,
-        "k2": 'Bhai',
-        "k3":req.body.lat,
-        "k4":req.body.lng,
-        "k5":req.body.faculty
+        "name": req.body.name,
+        
+        "lat":req.body.lat,
+        "lng":req.body.lng,
+        "faculty":req.body.faculty
     }
 };
 //callback style
