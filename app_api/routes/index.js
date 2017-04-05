@@ -88,7 +88,5 @@ router.post('/notifications',ctrlNotification.gettingTokens);
 router.get('/notifications',ctrlNotification.gettingTokensFromDb);
 router.delete('/notifications',ctrlNotification.deletingTokensFromDb);
 
-//Notification Sending to FCM
-router.post('/notifications/fcm',ctrlNotification.sendingNotificationtoFcm);
 
 module.exports = router;

@@ -59,7 +59,4 @@ sendJSONresponse(res,200,docs);
 });
  }
 
- module.exports.sendingNotificationtoFcm=function(req,res)
- {
 
- }
