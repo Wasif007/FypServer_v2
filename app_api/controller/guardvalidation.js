@@ -78,12 +78,12 @@ module.exports.guardDeleteList=function(req,res)
     {
      sendJSONresponse(res,200,{
   "Message":"Deleted all data"
-})else{
+})}else{
       throw err;
      }
     }
 
-});
+);
 }
 
 module.exports.login=function(req,res)
