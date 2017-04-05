@@ -25,7 +25,7 @@ var value;
         {
           value=someValue[0].Token;
           var message = {
-    "to": 'fuE87_zokMc:APA91bHnz3oDDaDwr2jGKMtTiyn1jfXNL0TaZslvZnpNDQq7_4R9JlAYFczXvmks1-dToOkhG-W3XdEREi_ERfD8Lgsst--ICt_zHGjVxN7evPbyIpTUBoLJorzKQ-S4O1RkomJRJwd3',
+    "to": 'e5biNgrFT9o:APA91bGBtZLMAsatq_HcWZrl6R77nsosnl_rDKjkShsbyHpsWmzUmyWiphcLonftRQ4BtQPypFu-hET1bsa6ex6nFgQ3rIdIMTzZuhKzB6QobyKN51Fax9RTnZP1lMxmvYh8XDPmJLKy',
     "notification" : {
         "title" : 'PING Notifications',
         "body" : req.body.name+req.body.faculty+req.body.lat+req.body.lng
