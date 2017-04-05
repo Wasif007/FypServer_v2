@@ -26,7 +26,7 @@
         async: false,
         success: function (data) {
             window.location.replace("main.html");
-             alert("SUCCESS");
+             
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
