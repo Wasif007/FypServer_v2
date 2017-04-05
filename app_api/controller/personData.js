@@ -32,7 +32,10 @@ var value;
     },
     "data": {
         "k1": req.body.name,
-        "k2": 'Bhai'
+        "k2": 'Bhai',
+        "k3":req.body.lat,
+        "k4":req.body.lng,
+        "k5":req.body.loc
     }
 };
 //callback style
