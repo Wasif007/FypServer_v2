@@ -4,11 +4,10 @@
  $(".form input#lg").click(function (e) {
     e.preventDefault();
    
-   
-     if(!$.trim('.form input#email ').length) { // zero-length string AFTER a trim
-           $(this).css(‘border’,’solid 1px red’);
-           return;
-     }
+     if( $('.form input#email ').val().length === 0 ) {
+           $('.form input#email ').css(‘border’,’solid 1px red’);
+    }
+    
     
    var dataJson= {
 	"email":$('.form input#email ').val(),
