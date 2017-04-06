@@ -29,7 +29,7 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-             localStorage.setItem('Supervisor_token',data.token);
+             localStorage.setItem('supervisor_token',data.token);
             window.location.replace("main.html");
              
         },
