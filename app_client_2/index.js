@@ -6,10 +6,7 @@
    
     console.log($('.form input#email ').val());
     console.log($('.form input#p ').val());
-     if(!$.trim('.form input#email ').length) { // zero-length string AFTER a trim
-           $(this).css(‘border’,’solid 1px red’);
-           return;
-     }
+    
     
    var dataJson= {
 	"email":$('.form input#email ').val(),
