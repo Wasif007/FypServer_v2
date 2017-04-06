@@ -51,7 +51,7 @@ router.get('/guardList',auth_guard,ctrlGettingGuardValidation.guardAddList);
 router.delete('/guardListDelete',auth_guard,ctrlGettingGuardValidation.guardDeleteList);
 
 //GuardsList
-router.get('/addingguard',auth_guard,ctrlGettingGuardData.guards);
+router.get('/addingguard',ctrlGettingGuardData.guards);
 router.post('/addingguard',upload,ctrlGettingGuardData.guardsAssigning);
 router.delete('/addingguardDelete',ctrlGettingGuardData.deleteguardList);
 router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGuard);

@@ -26,6 +26,7 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
+            console.log(data);
             window.location.replace("main.html");
              
         },
