@@ -26,7 +26,7 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-             localStorage.setItem('token',data.token);
+             localStorage.setItem('Supervisor_token',data.token);
             window.location.replace("main.html");
              
         },

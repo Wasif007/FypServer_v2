@@ -12,7 +12,8 @@ $(".form ").submit(function(e){
         data: formData,
         async: false,
         success: function (data) {
-            alert("SUCCESS");
+                window.location.replace("index.html");
+
         },
 
          error: function(XMLHttpRequest, textStatus, errorThrown) {
