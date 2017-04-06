@@ -7,11 +7,11 @@
     console.log($('.form input#email ').val());
     console.log($('.form input#p ').val());
     if($.trim($('.form input#email').val()) == ''){
-      alert('Input can not be left blank');
+       jQuery(this).css('outline', 'solid 1px red'); 
       return;
    }
    if($.trim($('.form input#p').val()) == ''){
-      alert('Input can not be left blank');
+        jQuery(this).css('outline', 'solid 1px red'); 
     return;
    }
    var dataJson= {
