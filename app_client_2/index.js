@@ -26,10 +26,10 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-             localStorage.UsersList = (JSON.stringify(data));
+             localStorage.UsersList = (JSON.stringify(data.token));
             var usersList = localStorage.UsersList;
             var usersList = $.parseJSON(usersList)
-            console.log(usersList.token)
+            console.log(usersList)
             window.location.replace("main.html");
              
         },
