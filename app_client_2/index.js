@@ -26,9 +26,7 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-          localStorage.setItem('User_Token', data.token);
-            console.log(localStorage.getItem('User_Token');
-            window.location.replace("main.html");
+          window.location.replace("main.html");
              
         },
 
