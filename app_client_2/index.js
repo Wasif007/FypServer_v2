@@ -6,14 +6,7 @@
    
     console.log($('.form input#email ').val());
     console.log($('.form input#p ').val());
-    if($.trim($('.form input#email').val()) == ''){
-       jQuery(this).css('outline', 'solid 1px red'); 
-      return;
-   }
-   if($.trim($('.form input#p').val()) == ''){
-        jQuery(this).css('outline', 'solid 1px red'); 
-    return;
-   }
+    
    var dataJson= {
 	"email":$('.form input#email ').val(),
 	"password":$('.form input#p ').val()
