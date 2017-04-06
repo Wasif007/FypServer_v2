@@ -29,7 +29,7 @@
              localStorage.UsersList = (JSON.stringify(data));
             var usersList = localStorage.UsersList;
             var usersList = $.parseJSON(usersList)
-            console.log(usersList[0])
+            console.log(usersList[0].token)
             window.location.replace("main.html");
              
         },
