@@ -4,9 +4,10 @@
  $(".form input#lg").click(function (e) {
     e.preventDefault();
    
-    console.log($('.form input#email ').val());
-    console.log($('.form input#p ').val());
-    
+   
+     if(!$.trim('.form input#email ').length) { // zero-length string AFTER a trim
+           return;
+     }
     
    var dataJson= {
 	"email":$('.form input#email ').val(),
