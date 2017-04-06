@@ -1,17 +1,17 @@
 /*globals $*/
 
-$('#apply-form input').blur(function()
-{
-    if( !$(this).val() ) {
-          $(this).parents('p').addClass('warning');
-    }
-});
+
  $(".form input#lg").click(function (e) {
     e.preventDefault();
    
     console.log($('.form input#email ').val());
     console.log($('.form input#p ').val());
-    
+    if($.trim($('.form input#email').val()) == ''){
+      alert('Input can not be left blank');
+   }
+   if($.trim($('.form input#p').val()) == ''){
+      alert('Input can not be left blank');
+   }
    var dataJson= {
 	"email":$('.form input#email ').val(),
 	"password":$('.form input#p ').val()
