@@ -1,5 +1,11 @@
 /*globals $*/
 
+$('#apply-form input').blur(function()
+{
+    if( !$(this).val() ) {
+          $(this).parents('p').addClass('warning');
+    }
+});
  $(".form input#lg").click(function (e) {
     e.preventDefault();
    
