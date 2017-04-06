@@ -5,8 +5,8 @@
     e.preventDefault();
    
      if( $('.form input#email ').val().length === 0 ) {
-           $('.form input#email ').css('border','solid 1px red');
-           return;
+   $('.form input#email ').css( "border", "1px solid #FB9E25" ); 
+             return;
     }
     
     
