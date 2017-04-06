@@ -26,10 +26,8 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-             localStorage.UsersList = data.token;
-            var usersList = localStorage.UsersList;
-            var usersList = $.parseJSON(usersList)
-            console.log(usersList)
+          localStorage.setItem('User_Token', data.token);
+            console.log(localStorage.getItem('User_Token');
             window.location.replace("main.html");
              
         },
