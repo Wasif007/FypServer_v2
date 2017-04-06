@@ -8,9 +8,11 @@
     console.log($('.form input#p ').val());
     if($.trim($('.form input#email').val()) == ''){
       alert('Input can not be left blank');
+      return;
    }
    if($.trim($('.form input#p').val()) == ''){
       alert('Input can not be left blank');
+    return;
    }
    var dataJson= {
 	"email":$('.form input#email ').val(),
