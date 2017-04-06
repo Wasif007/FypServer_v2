@@ -8,7 +8,10 @@
    $('.form input#email ').css( "border", "1px solid #FB9E25" ); 
              return;
     }
-    
+    if( $('.form input#p ').val().length === 0 ) {
+   $('.form input#p ').css( "border", "1px solid #FB9E25" ); 
+             return;
+    } 
     
    var dataJson= {
 	"email":$('.form input#email ').val(),
