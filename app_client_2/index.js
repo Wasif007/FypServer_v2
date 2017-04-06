@@ -26,7 +26,7 @@
         contentType: 'application/json',
         async: false,
         success: function (data) {
-             
+             location.setItem('token',data.token);
             window.location.replace("main.html");
              
         },
