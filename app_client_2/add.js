@@ -17,7 +17,7 @@ $(".col-1-3").submit(function(){
         },
 
          error: function(XMLHttpRequest, textStatus, errorThrown) {
-     alert(errorThrown);
+     alert(errorThrown+" "+textStatus);
           },
         cache: false,
         contentType: false,
