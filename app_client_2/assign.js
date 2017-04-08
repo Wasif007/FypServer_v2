@@ -55,12 +55,12 @@ console.log(dataJson);
     dataType: 'json',
         async: false,
         success: function (data) {
-           $("#submit").text("Duty Assigned").show();
+           alert('Success');
     
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("Error");
+           alert('Error');
         },
         cache: false,
        
