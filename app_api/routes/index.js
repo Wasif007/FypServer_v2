@@ -70,6 +70,7 @@ router.get('/guardData',ctrlGettingGuardData.guards);
 
 //Getting Supervisor Name
 router.get('/supervisorName/:supervisorEmail',ctrlSupervisorValidation.gettingName);
+router.get('/supervisorName',ctrlSupervisorValidation.supervisorList);
 
 //Message Route
 router.post('/twilioMessage',ctrlTwilioRoute.sendingMessage);
