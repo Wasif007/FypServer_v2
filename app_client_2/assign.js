@@ -23,11 +23,11 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
    
   
    var dataJson= {
-	"supervisorName":"Wasif",
+	"supervisorName":localStorage.getItem('supervisor_Name'),
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
-	"supervisorImageUrl":"http://res.cloudinary.com/wasif007/image/upload/v1487107545/pingfolder/mczmhut85bjwneq2a1kz.jpg",
+	"supervisorImageUrl":localStorage.getItem('supervisor_ImageUrl'),
 	"time":$('.col-1-3 select#time ').val(),
 	"guardUsername":$('.col-1-3 input#email ').val()
 };
