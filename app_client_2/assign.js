@@ -55,7 +55,7 @@ console.log(dataJson);
     dataType: 'json',
         async: false,
         success: function (data) {
-            alert("success");
+           $("#submit").text("Duty Assigned").show();
     
         },
 
