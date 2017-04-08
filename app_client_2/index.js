@@ -4,7 +4,7 @@
  $(".form input#lg").click(function (e) {
     e.preventDefault();
   if( $('.form input#email ').val().length === 0 ) {
-    console.log("Please Enter email");
+   alert("Enter email");
    return ;
 }
   
