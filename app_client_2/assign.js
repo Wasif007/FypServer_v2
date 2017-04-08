@@ -21,18 +21,7 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
  $(".col-1-3").submit(function (e) {
     e.preventDefault();
    
-   $('#names').text('');
-  if( $('#guards ').val().length === 0 ) {
-$('#names').text('Guard Selection Required'); 
-  return ;
-}
-  if( $('#location ').val().length === 0 ) {
-$('#names').text('Location Required'); 
-  return ;
-}
-  if( $('#time').val().length === 0 ) {
-$('#names').text('Time Required'); 
-  return ;
+  
 }
 
   
