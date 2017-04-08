@@ -4,9 +4,7 @@
  $(".form input#lg").click(function (e) {
     e.preventDefault();
   if( $('.form input#email ').val().length === 0 ) {
-   var errName = $("#names"); //Element selector
-   errName.html("Please enter name"); // Put the message content inside div
-   errName.addClass('error-msg'); //add a class to the element
+    console.log("Please Enter email");
    return ;
 }
   
