@@ -67,7 +67,9 @@
         
      
 
-          --> <form class="col-1-3" action="//pingfyp.herokuapp.com/api/addingguard" >
+          --> 
+          <div id="names" ></div>
+          <form class="col-1-3" action="//pingfyp.herokuapp.com/api/addingguard" >
               
          <img class="img-circle" src="sakhi.jpg">
 
@@ -75,29 +77,29 @@
               
                <div>
                <span>Upload Guard Image</span>
-               <input id="preview" name="file" type="file" />
+               <input id="preview" name="file" type="file" required value='' />
             </div>
              
             <label>
               Name
-              <input type="text" name="name" placeholder="Full name" required>
+              <input type="text" name="name" placeholder="Full name" value='' required>
             </label>
 
             <label>
               Email
-              <input type="text" name="email" placeholder="Email"  required>
+              <input type="email" name="email" id="emails" placeholder="Email"  value='' required>
             </label>
             <label>
               Phone No
-              <input type="text" name="phone" placeholder="Phone No." required>
+              <input type="text" name="phone" placeholder="Phone No." value='' required>
             </label>
              <label>
               Home Address
-              <input type="text" name="home_address" placeholder="Address" required>
+              <input type="text" name="home_address" placeholder="Address" value='' required>
             </label>
               <label>
               Code
-              <input type="text" name="code" placeholder="Code" required>
+              <input type="text" value='' name="code" placeholder="Code" required>
             </label>
 
          

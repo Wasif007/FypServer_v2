@@ -3,6 +3,7 @@
 $(".col-1-3").submit(function(){
 
     var formData = new FormData($(this)[0]);
+
    // console.log($(this).attr("action"));
     $.ajax({
         
