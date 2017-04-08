@@ -37,7 +37,7 @@ $('#names').text('Password Required');
              localStorage.setItem('supervisor_token',data.token);
             
               $.ajax({
-                url: "https://pingfyp.herokuapp.com/api/supervisorName/",
+                url: "https://pingfyp.herokuapp.com/api/supervisorName/"+$('.form input#email ').val(),
                 type: 'GET',
                 dataType: 'json', // added data type
                 success: function(res) {
