@@ -16,17 +16,23 @@ module.exports.gettingName=function(req,res)
   if(req.params.supervisorEmail)
   {
   SupervisorValidation.findOne({email:req.params.supervisorEmail}, function(err, docs) {
-    if (!err){ 
-sendJSONresponse(res,200,docs);
-    } else {
-      throw err;
+    if (docs){ 
+return sendJSONresponse(res,200,docs);
+    } else if(!docs){
+     return sendJSONresponse(res,401,{
+        "Message":"Not found"
+      })
+     else 
+      return sendJSONresponse(res,401,{
+        "Message":err
+      })
     }
 });
   }
-  else
+  else if(!req.params.supervisorEmail)
   {
-    sendJSONresponse(res,404,{
-      "Message":"eRROR"
+    sendJSONresponse(res,401,{
+      "Message":"Not provided name"
     })
   }
 }
@@ -35,7 +41,7 @@ module.exports.signup=function(req,res)
 if(!req.body.name || !req.body.password || !req.body.home_address ||!req.body.email || !req.file.url || !req.body.phone )
 {
 sendJSONresponse(res,404,{
-	"message":"Required "
+	"Message":"Required Fields are not provided"
 });
 return;
 }
