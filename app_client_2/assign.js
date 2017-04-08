@@ -20,14 +20,15 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
 
  $(".col-1-3").submit(function (e) {
     e.preventDefault();
-   
-  
+   var _supervisorName=localStorage.getItem('supervisor_Name');
+  var _supervisorImageUrl=localStorage.getItem('supervisor_ImageUrl');
+  alert(_supervisorName);
    var dataJson= {
-	"supervisorName":localStorage.getItem('supervisor_Name'),
+	"supervisorName":"wasif",
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
-	"supervisorImageUrl":localStorage.getItem('supervisor_ImageUrl'),
+	"supervisorImageUrl":"wasif",
 	"time":$('.col-1-3 select#time ').val(),
 	"guardUsername":$('.col-1-3 input#email ').val()
 };
