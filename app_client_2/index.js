@@ -3,8 +3,9 @@
 
  $(".form input#lg").click(function (e) {
     e.preventDefault();
+
   if( $('.form input#email ').val().length === 0 ) {
-   alert("Enter email");
+   $("#names").attr('disabled','disabled');
    return ;
 }
   
