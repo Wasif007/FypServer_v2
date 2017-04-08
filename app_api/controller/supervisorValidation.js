@@ -18,15 +18,14 @@ module.exports.gettingName=function(req,res)
   SupervisorValidation.findOne({email:req.params.supervisorEmail}, function(err, docs) {
     if (docs){ 
 return sendJSONresponse(res,200,docs);
-    } else if(!docs){
-     return sendJSONresponse(res,401,{
-        "Message":"Not found"
-      })
-     else 
-      return sendJSONresponse(res,401,{
-        "Message":err
-      })
+    } else if(!docs)
+    {
+     return sendJSONresponse(res,401,{"Message":"Not found"})
     }
+
+     else 
+      return sendJSONresponse(res,401,{"Message":err})
+    
 });
   }
   else if(!req.params.supervisorEmail)
