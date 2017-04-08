@@ -21,13 +21,28 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
  $(".col-1-3").submit(function (e) {
     e.preventDefault();
    
+   $('#names').text('');
+  if( $('#guards ').val().length === 0 ) {
+$('#names').text('Guard Selection Required'); 
+  return ;
+}
+  if( $('#location ').val().length === 0 ) {
+$('#names').text('Location Required'); 
+  return ;
+}
+  if( $('#time').val().length === 0 ) {
+$('#names').text('Time Required'); 
+  return ;
+}
+
+  
   
    var dataJson= {
-	"supervisorName":"Wasif",
+	"supervisorName":localStorage.getItem('supervisor_Name'),
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
-	"supervisorImageUrl":"http://res.cloudinary.com/wasif007/image/upload/v1487107545/pingfolder/mczmhut85bjwneq2a1kz.jpg",
+	"supervisorImageUrl":localStorage.getItem('supervisor_ImageUrl'),
 	"time":$('.col-1-3 select#time ').val(),
 	"guardUsername":$('.col-1-3 input#email ').val()
 };
@@ -49,12 +64,12 @@ console.log(dataJson);
     dataType: 'json',
         async: false,
         success: function (data) {
-            alert("SUCCESS");
+            
     
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("some error" + textStatus);
+            
         },
         cache: false,
        
