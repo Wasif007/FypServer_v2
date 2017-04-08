@@ -17,7 +17,7 @@ $('#names').text('Password Required');
   return ;
 }
     var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-if (!testEmail.test($('.form input#p ').val()))
+if (!testEmail.test($('.form input#email ').val()))
 { $('#names').text('Valid Email Required'); 
   return ;
 }
