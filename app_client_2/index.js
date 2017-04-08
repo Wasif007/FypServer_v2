@@ -1,5 +1,9 @@
 /*globals $*/
 
+ function validateEmail($email) {
+  var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  return emailReg.test( $email );
+}
 
  $(".form input#lg").click(function (e) {
     e.preventDefault();
@@ -9,11 +13,16 @@ $('#names').text('Email Required');
 
   return ;
 }
+
+  if( !validateEmail('.form input#email ')) { 
+   $('#names').text('Provide Valid Email'); 
+  return ;
+   }
+   
   if( $('.form input#p ').val().length === 0 ) {
 $('#names').text('Password Required'); 
   return ;
 }
-  
     
    var dataJson= {
 	"email":$('.form input#email ').val(),
