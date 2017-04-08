@@ -3,9 +3,9 @@
 
  $(".form input#lg").click(function (e) {
     e.preventDefault();
-
+$("#names").prop('disabled',true);
   if( $('.form input#email ').val().length === 0 ) {
-   $("#names").attr('disabled','disabled');
+ $("#names").prop('disabled',false);
    return ;
 }
   
