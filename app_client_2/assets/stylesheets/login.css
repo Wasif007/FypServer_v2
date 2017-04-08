@@ -11,6 +11,9 @@ body {
   color: white;
   font-weight: 300;
 }
+.error-msg{
+   background-color: #FF0000;
+}
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
   font-family: 'Source Sans Pro', sans-serif;
