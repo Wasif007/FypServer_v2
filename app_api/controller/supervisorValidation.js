@@ -37,6 +37,12 @@ return sendJSONresponse(res,200,docs);
 }
 module.exports.signup=function(req,res)
 {
+     if(req.file===undefined || req.file===null)
+            {
+              return sendJSONresponse(res,401,{
+                "Message":"Provide all required fields"
+              })
+            }
 if(!req.body.name || !req.body.password || !req.body.home_address ||!req.body.email || !req.file.url || !req.body.phone )
 {
 sendJSONresponse(res,401,{
