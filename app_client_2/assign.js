@@ -42,7 +42,9 @@ console.log(dataJson);
         url: $(this).attr("action"),
         type: 'POST',
         data: JSON.stringify(dataJson),
-        contentType: 'application/json',
+         headers: {
+        'Content-Type':'application/json'
+    },
         async: false,
         success: function (data) {
             alert("SUCCESS");
