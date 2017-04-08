@@ -35,8 +35,18 @@ $('#names').text('Password Required');
         async: false,
         success: function (data) {
              localStorage.setItem('supervisor_token',data.token);
-            window.location.replace("main.html");
-             
+            
+              $.ajax({
+                url: "https://pingfyp.herokuapp.com/api/supervisorName/",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+               localStorage.setItem('supervisor_Name',res.name);
+               localStorage.setItem('supervisor_ImageUrl',res.imageUrl);
+               window.location.replace("main.html");
+        },
+        
+    });
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
