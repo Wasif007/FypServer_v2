@@ -3,10 +3,15 @@
 
  $(".form input#lg").click(function (e) {
     e.preventDefault();
-
+$('#names').text('');
   if( $('.form input#email ').val().length === 0 ) {
-$("#names").attr('disabled','disabled');
-   return ;
+$('#names').text('Email Required'); 
+
+  return ;
+}
+  if( $('.form input#p ').val().length === 0 ) {
+$('#names').text('Password Required'); 
+  return ;
 }
   
     
@@ -35,7 +40,7 @@ $("#names").attr('disabled','disabled');
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-            alert("some error" + textStatus);
+            $('#names').text('Invalid Email or Password');
         },
         cache: false,
        

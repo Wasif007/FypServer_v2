@@ -12,7 +12,9 @@ body {
   font-weight: 300;
 }
 .error-msg{
-   background-color: #FF0000;
+            border-width:1px;
+  border-style: solid;
+             
 }
 body ::-webkit-input-placeholder {
   /* WebKit browsers */
