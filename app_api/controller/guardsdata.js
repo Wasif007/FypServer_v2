@@ -142,7 +142,7 @@ module.exports.guardsAssigning=function(req,res)
     method: 'POST',
     json: {
       'to':req.body.phone,
-      'code':req.body.code
+      'code':req.body.message+"  Code is: "+req.body.code
     }
   };
 
