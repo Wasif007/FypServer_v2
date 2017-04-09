@@ -12,13 +12,13 @@ $(".col-1-3").submit(function(){
         type: 'POST',
         data: formData,
         async: false,
-        success: function (data) {
-      alert("SUCCESS");
+        success: function (data,textStatus,xhr) {
+           alert('Success'+xhr.status);
+    
         },
-
-         error: function(XMLHttpRequest, textStatus, errorThrown) {
-     alert(errorThrown+" "+textStatus);
-          },
+        complete:function (xhr,textStatus){
+                alert(xhr.status);
+        },
         cache: false,
         contentType: false,
         processData: false

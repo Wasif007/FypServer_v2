@@ -52,13 +52,13 @@ router.delete('/guardListDelete',auth_guard,ctrlGettingGuardValidation.guardDele
 
 //GuardsList
 router.get('/addingguard',ctrlGettingGuardData.guards);
-router.post('/addingguard',upload,ctrlGettingGuardData.guardsAssigning);
+router.post('/addingguard',upload,,auth_supervisor,ctrlGettingGuardData.guardsAssigning);
 router.delete('/addingguardDelete',ctrlGettingGuardData.deleteguardList);
 router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGuard);
 
 //Signup Login Supervisor 
 router.post('/supervisorLogin',ctrlSupervisorValidation.login);
-router.post('/supervisorSignup',upload,ctrlSupervisorValidation.signup);
+router.post('/supervisorSignup',uploadctrlSupervisorValidation.signup);
 router.get('/supervisorList',auth_supervisor,ctrlSupervisorValidation.supervisorList);
 router.delete('/supervisorDelete',auth_supervisor,ctrlSupervisorValidation.deletesupervisorList);
 
