@@ -54,9 +54,12 @@ console.log(dataJson);
     },
     dataType: 'json',
         async: false,
-        success: function (data) {
-           alert('Success');
+        success: function (data,textStatus,xhr) {
+           alert('Success'+xhr.status);
     
+        },
+        complete:function (xhr,textStatus){
+            alert(xhr.status);
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
