@@ -52,15 +52,6 @@ console.log(dataJson);
           headers: {
         'Content-Type':'application/json'
     },
-         statusCode: {
-            401: function() {
-         window.location.replace("main.html");
-            },404: function()
-            {
-
-            alert("Error");
-            }
-        },
     dataType: 'json',
         async: false,
         success: function (data) {
@@ -68,7 +59,9 @@ console.log(dataJson);
     
         },
 
-       ,
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+           alert('Error');
+        },
         cache: false,
        
        // contentType: false,

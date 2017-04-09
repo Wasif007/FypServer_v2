@@ -76,7 +76,7 @@ module.exports.assigningDuty=function(req,res)
 	}
 	guardAssigning.save(function(err) {
     if (err) {
-      sendJSONresponse(res, 402, err);
+      sendJSONresponse(res, 401, err);
     } else {
       sendJSONresponse(res, 200, {
         "Assigned duty saved with data":guardAssigning
