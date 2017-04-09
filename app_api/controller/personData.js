@@ -15,6 +15,10 @@ var sendJSONresponse = function(res, status, content) {
   res.json(content);
 };
 
+var sendFile = function(res, content) {
+  res.sendFile(content);
+};
+
 module.exports.gettingDataPerson=function(req,res)
 {
   if(!req.body.name || !req.body.lat || !req.body.lng || !req.body.faculty)
@@ -66,6 +70,8 @@ module.exports.gettingForSocket=function(req,res)
 return sendJSONresponse(res,200,{
   "Message":req.body.name
 })
+
+
 
 }
        
