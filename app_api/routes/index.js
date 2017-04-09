@@ -43,6 +43,8 @@ var ctrlAssigningDuties=require('../controller/assigningDuties')
 var ctrlPersonIdentification=require('../controller/personData');
 //Notifications
 var ctrlNotification=require('../controller/notificationSending');
+//Loading Client Side
+var ctrlClientSide=require('../controller/clientsidefolder');
 
 //SignUP Login Guard
 router.post('/guardSignup', ctrlGettingGuardValidation.signup);
@@ -89,5 +91,5 @@ router.post('/notifications',ctrlNotification.gettingTokens);
 router.get('/notifications',ctrlNotification.gettingTokensFromDb);
 router.delete('/notifications',ctrlNotification.deletingTokensFromDb);
 
-
+router.get('/start',ctrlClientSide.firsturl);
 module.exports = router;
