@@ -66,7 +66,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/api', routesApi);
 
-app.use('/start',express.static(path.join(__dirname, 'public/app_client_2/index.html')));
+app.use('/starts',express.static(path.join(__dirname, 'public/app_client_2/index.html')));
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
