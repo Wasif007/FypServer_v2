@@ -52,6 +52,12 @@ console.log(dataJson);
           headers: {
         'Content-Type':'application/json'
     },
+         statusCode: {
+            401: function() {
+         window.location.replace("main.html");
+
+            }
+        },
     dataType: 'json',
         async: false,
         success: function (data) {
