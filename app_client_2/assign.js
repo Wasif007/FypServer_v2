@@ -55,7 +55,10 @@ console.log(dataJson);
          statusCode: {
             401: function() {
          window.location.replace("main.html");
+            },404: function()
+            {
 
+            alert("Error");
             }
         },
     dataType: 'json',
@@ -65,9 +68,7 @@ console.log(dataJson);
     
         },
 
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-           alert('Error'+textStatus+errorThrown);
-        },
+       ,
         cache: false,
        
        // contentType: false,
