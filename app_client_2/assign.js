@@ -29,7 +29,7 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
   
   
    var dataJson= {
-	"supervisorName":localStorage.getItem('supervisor_Name'),
+	"supervisorName":'',
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
