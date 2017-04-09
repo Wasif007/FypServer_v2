@@ -54,6 +54,10 @@ console.log(dataJson);
     },
     dataType: 'json',
         async: false,
+         beforeSend: function (xhr) {
+        /* Authorization header */
+        xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem('supervisor_token'));
+    },
         success: function (data,textStatus,xhr) {
            alert('Success'+xhr.status);
     
