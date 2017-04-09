@@ -52,7 +52,7 @@ router.delete('/guardListDelete',auth_guard,ctrlGettingGuardValidation.guardDele
 
 //GuardsList
 router.get('/addingguard',ctrlGettingGuardData.guards);
-router.post('/addingguard',upload,,auth_supervisor,ctrlGettingGuardData.guardsAssigning);
+router.post('/addingguard',upload,auth_supervisor,ctrlGettingGuardData.guardsAssigning);
 router.delete('/addingguardDelete',ctrlGettingGuardData.deleteguardList);
 router.delete('/addingguardDelete/:email',ctrlGettingGuardData.deleteSpecificGuard);
 
