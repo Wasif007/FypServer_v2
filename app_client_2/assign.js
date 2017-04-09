@@ -66,7 +66,7 @@ console.log(dataJson);
         },
 
         error: function (XMLHttpRequest, textStatus, errorThrown) {
-           alert('Error');
+           alert('Error'+textStatus+errorThrown);
         },
         cache: false,
        
