@@ -49,7 +49,7 @@ module.exports.assigningDuty=function(req,res)
 	guardAssigning.supervisorImageUrl=req.body.supervisorImageUrl;
 	guardAssigning.guardName=req.body.guardName;
 	guardAssigning.time=req.body.time;
-	
+	guardAssigning.phone=req.body.phone;
 	guardAssigning.guardUsername=req.body.guardUsername;
 	if(req.body.location==='FCSE')
 	{
