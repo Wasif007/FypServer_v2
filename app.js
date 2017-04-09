@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
 var passport = require('passport');
+var session = require('express-session');
 
 require('./app_api/model/db');
 require('./app_api/config/passport');
