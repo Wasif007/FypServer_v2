@@ -59,7 +59,12 @@ console.log(dataJson);
     
         },
         complete:function (xhr,textStatus){
-            alert(xhr.status);
+                if(xhr.status===401)
+                window.location.replace('index.html');
+                else if(xhr.status===404)
+                alert("Some field missing");
+                else if(xhr.status===402)
+                alert("Error while adding in Database");
         },
 
         
