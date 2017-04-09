@@ -29,7 +29,7 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
   
   
    var dataJson= {
-	"supervisorName":'',
+	"supervisorName":localStorage.getItem('supervisor_Name'),
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
@@ -62,9 +62,7 @@ console.log(dataJson);
             alert(xhr.status);
         },
 
-        error: function (XMLHttpRequest, textStatus, errorThrown) {
-           alert('Error');
-        },
+        
         cache: false,
        
        // contentType: false,
