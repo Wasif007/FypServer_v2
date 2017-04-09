@@ -114,13 +114,13 @@ module.exports.guardsAssigning=function(req,res)
 {
 	        if(req.file===undefined || req.file===null)
             {
-              return sendJSONresponse(res,401,{
+              return sendJSONresponse(res,404,{
                 "Message":"Provide all required fields"
               })
             }
 	if(!req.body.email || !req.body.home_address || !req.body.phone  || !req.file.url || !req.body.code || !req.body.name)
 	{
-		sendJSONresponse(res,401,{
+		sendJSONresponse(res,404,{
 			"Message":"Provide all required fields"
 		})
 		return;
