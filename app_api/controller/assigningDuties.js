@@ -34,7 +34,7 @@ module.exports.assigningDuty=function(req,res)
 
 	if(!req.body.supervisorName || !req.body.guardName 
 		|| !req.body.supervisorImageUrl  || !req.body.guardImageUrl 
-		|| !req.body.time || !req.body.location ||!req.body.guardUsername)
+		|| !req.body.time || !req.body.phone || !req.body.location ||!req.body.guardUsername)
 	{
 		sendJSONresponse(res,404,{
 			"message":"Required fields are not provided"
@@ -49,6 +49,7 @@ module.exports.assigningDuty=function(req,res)
 	guardAssigning.supervisorImageUrl=req.body.supervisorImageUrl;
 	guardAssigning.guardName=req.body.guardName;
 	guardAssigning.time=req.body.time;
+	
 	guardAssigning.guardUsername=req.body.guardUsername;
 	if(req.body.location==='FCSE')
 	{
