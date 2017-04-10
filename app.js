@@ -95,7 +95,7 @@ var sessionChecker = (req, res, next) => {
     }    
 };
 
-
+//route for main
 app.get('/dashboard', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
         res.sendFile(__dirname + '/public/main.html');
@@ -104,7 +104,7 @@ app.get('/dashboard', (req, res) => {
     }
 });
 
-// route for Home-Page
+// route for login
 app.get('/', sessionChecker, (req, res) => {
    /// console.log('Cookies: ', req.cookies)
     res.redirect('/login');
@@ -112,7 +112,7 @@ app.get('/', sessionChecker, (req, res) => {
 
 app.use('/api', routesApi);
 
-
+// route for logout
 app.get('/logout', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
         res.clearCookie('user_sid1');
@@ -122,13 +122,12 @@ app.get('/logout', (req, res) => {
     }
 });
 
-
+// route for signup
 app.route('/signup')
     .get(sessionChecker, (req, res) => {
         res.sendFile(__dirname + '/public/signup.html');
     })
     ;
-
 
 // route for user Login
 app.route('/login')
@@ -151,11 +150,19 @@ app.route('/login')
       {
         req.session.user = user.email;
         console.log(res.token);
-        res.redirect('/signup');
+        res.redirect('/dashboard');
       }
     });
    });
 
+//route for assign
+app.get('/assign', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/assign.html');
+    } else {
+        res.redirect('/login');
+    }
+});
 
 
 
