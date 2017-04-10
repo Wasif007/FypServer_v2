@@ -36,7 +36,7 @@ if (!testEmail.test($('.form input#email ').val()))
 
         url: $('.form').attr("action"),
         type: 'POST',
-        data: JSON.stringify(dataJson),
+        data: dataJson,
         contentType: 'application/x-www-form-urlencoded',
         async: false,
         success: function (data) {
