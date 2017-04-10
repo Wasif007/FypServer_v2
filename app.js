@@ -89,12 +89,20 @@ app.use((req, res, next) => {
 
 var sessionChecker = (req, res, next) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.redirect('/signup');
+        res.redirect('/dashboard');
     } else {
         next();
     }    
 };
 
+
+app.get('/dashboard', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/main.html');
+    } else {
+        res.redirect('/login');
+    }
+});
 
 // route for Home-Page
 app.get('/', sessionChecker, (req, res) => {
@@ -104,6 +112,15 @@ app.get('/', sessionChecker, (req, res) => {
 
 app.use('/api', routesApi);
 
+
+app.get('/logout', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.clearCookie('user_sid1');
+        res.redirect('/');
+    } else {
+        res.redirect('/login');
+    }
+});
 
 
 app.route('/signup')
