@@ -68,8 +68,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(session({
-    key: 'user_sid',
-    secret: 'somerandonstuffs',
+    key: 'user_sid1',
+    secret: 'somerandonstuffs1',
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -81,14 +81,14 @@ app.use(session({
 // This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
 // This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
 app.use((req, res, next) => {
-    if (req.cookies.user_sid && !req.session.user) {
-        res.clearCookie('user_sid');        
+    if (req.cookies.user_sid1 && !req.session.user) {
+        res.clearCookie('user_sid1');        
     }
     next();
 });
 
 var sessionChecker = (req, res, next) => {
-    if (req.session.user && req.cookies.user_sid) {
+    if (req.session.user && req.cookies.user_sid1) {
         res.redirect('/signup');
     } else {
         next();
@@ -98,7 +98,7 @@ var sessionChecker = (req, res, next) => {
 
 // route for Home-Page
 app.get('/', sessionChecker, (req, res) => {
-    console.log('Cookies: ', req.cookies)
+   /// console.log('Cookies: ', req.cookies)
     res.redirect('/login');
 });
 
@@ -116,7 +116,7 @@ app.route('/signup')
 // route for user Login
 app.route('/login')
     .get(sessionChecker, (req, res) => {
-        res.sendFile(__dirname + '/public/login.html');
+        res.sendFile(__dirname + '/public/test.html');
     })
     .post((req, res) => {
       var username = req.body.email,
@@ -132,7 +132,9 @@ app.route('/login')
       }
       else
       {
+
         req.session.user = user.dataValues;
+        console.log(req.session.user, "asdd");
                 res.redirect('/signup');
       }
     });
