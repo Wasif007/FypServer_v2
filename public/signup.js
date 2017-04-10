@@ -12,7 +12,7 @@ $(".form ").submit(function(e){
         data: formData,
         async: false,
         success: function (data) {
-                window.location.replace("login.html");
+                window.location.replace("/login");
 
         },
 
@@ -29,7 +29,7 @@ $(".form ").submit(function(e){
 
 $(".form input#lg").click(function(e){
     e.preventDefault();
-    window.location.replace("login.html");
+    window.location.replace("/login");
 });
 
  $('.form input#preview').change(function(e) {
