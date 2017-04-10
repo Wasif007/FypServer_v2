@@ -98,7 +98,7 @@ var sessionChecker = (req, res, next) => {
 //route for main
 app.get('/dashboard', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/main.html');
+        res.sendFile(__dirname + '/public/main_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -125,14 +125,14 @@ app.get('/logout', (req, res) => {
 // route for signup
 app.route('/signup')
     .get(sessionChecker, (req, res) => {
-        res.sendFile(__dirname + '/public/signup.html');
+        res.sendFile(__dirname + '/public/signup_first_last.html');
     })
     ;
 
 // route for user Login
 app.route('/login')
     .get(sessionChecker, (req, res) => {
-        res.sendFile(__dirname + '/public/login.html');
+        res.sendFile(__dirname + '/public/login_first_last.html');
     })
     .post((req, res) => {
       var username = req.body.email,
@@ -158,7 +158,7 @@ app.route('/login')
 //route for assign
 app.get('/assign', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/assign.html');
+        res.sendFile(__dirname + '/public/assign_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -167,7 +167,7 @@ app.get('/assign', (req, res) => {
 //route for add
 app.get('/add', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/add.html');
+        res.sendFile(__dirname + '/public/add_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -176,7 +176,7 @@ app.get('/add', (req, res) => {
 //route for guards
 app.get('/guards', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/guards.html');
+        res.sendFile(__dirname + '/public/guards_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -185,7 +185,7 @@ app.get('/guards', (req, res) => {
 //route for history
 app.get('/history', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/history.html');
+        res.sendFile(__dirname + '/public/history_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -195,7 +195,7 @@ app.get('/history', (req, res) => {
 //route for modules
 app.get('/modules', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/modules.html');
+        res.sendFile(__dirname + '/public/modules_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -205,7 +205,7 @@ app.get('/modules', (req, res) => {
 //route for supervisors
 app.get('/supervisors', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/supervisors.html');
+        res.sendFile(__dirname + '/public/supervisors_first_last.html');
     } else {
         res.redirect('/login');
     }
@@ -215,7 +215,7 @@ app.get('/supervisors', (req, res) => {
 //route for tasks
 app.get('/tasks', (req, res) => {
     if (req.session.user && req.cookies.user_sid1) {
-        res.sendFile(__dirname + '/public/tasks.html');
+        res.sendFile(__dirname + '/public/tasks_first_last.html');
     } else {
         res.redirect('/login');
     }
