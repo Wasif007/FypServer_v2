@@ -133,7 +133,7 @@ app.route('/login')
       else
       {
 
-        req.session.user = user.dataValues;
+        req.session.user = user.password;
         console.log(req.session.user, "asdd");
                 res.redirect('/signup');
       }
