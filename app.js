@@ -116,7 +116,7 @@ app.route('/signup')
 // route for user Login
 app.route('/login')
     .get(sessionChecker, (req, res) => {
-        res.sendFile(__dirname + '/public/test.html');
+        res.sendFile(__dirname + '/public/login.html');
     })
     .post((req, res) => {
       var username = req.body.email,
