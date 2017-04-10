@@ -76,7 +76,7 @@ router.get('/supervisorName',ctrlSupervisorValidation.supervisorList);
 router.post('/twilioMessage',ctrlTwilioRoute.sendingMessage);
 
 //Assigning Duties
-router.post('/assignDuty',auth_supervisor,ctrlAssigningDuties.assigningDuty);
+router.post('/assignDuty',ctrlAssigningDuties.assigningDuty);
 router.get('/assignDuty',ctrlAssigningDuties.assignedDutiesList);
 router.delete('/assignDuty',ctrlAssigningDuties.deleteAssignedDuties);
 
