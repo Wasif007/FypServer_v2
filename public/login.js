@@ -49,7 +49,7 @@ if (!testEmail.test($('.form input#email ').val()))
                 success: function(res) {
                localStorage.setItem('supervisor_Name',res.name);
                localStorage.setItem('supervisor_ImageUrl',res.imageUrl);
-               window.location.replace("main.html");
+               
         },
         
     });
