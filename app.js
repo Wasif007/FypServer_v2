@@ -8,9 +8,11 @@ var bodyParser = require('body-parser');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
 var passport = require('passport');
-var session=require('express-session');
+var session = require('express-session');
 require('./app_api/model/db');
 require('./app_api/config/passport');
+var mongoose=require('mongoose');
+var SupervisorValidation=mongoose.model('SupervisorValidation');
 
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
@@ -96,6 +98,7 @@ var sessionChecker = (req, res, next) => {
 
 // route for Home-Page
 app.get('/', sessionChecker, (req, res) => {
+    console.log('Cookies: ', req.cookies)
     res.redirect('/login');
 });
 
@@ -113,9 +116,28 @@ app.route('/signup')
 // route for user Login
 app.route('/login')
     .get(sessionChecker, (req, res) => {
-        res.sendFile(__dirname + '/public/login.html');
+        res.sendFile(__dirname + '/public/test.html');
     })
-   ;
+    .post((req, res) => {
+      var username = req.body.email,
+            password = req.body.password;
+      
+      SupervisorValidation.findOne({ email: username }, 
+      function (err, user) {
+      if (!user) {
+        res.redirect('/login');
+      }
+      else if (!user.validPassword(password)) {
+        res.redirect('/login');
+      }
+      else
+      {
+        req.session.user = user.dataValues;
+                res.redirect('/signup');
+      }
+    });
+   });
+
 
 
 
