@@ -149,10 +149,11 @@ app.route('/login')
       }
       else
       {
-        console.log(user);
         req.session.user = user.email;
-        console.log(req.session.user, "asdd");
-                res.redirect('/signup');
+        localStorage.setItem('supervisor_Name',res.name);
+        localStorage.setItem('supervisor_ImageUrl',res.imageUrl);
+        console.log(res.token);
+        res.redirect('/signup');
       }
     });
    });
