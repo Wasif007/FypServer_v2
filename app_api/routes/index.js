@@ -84,6 +84,8 @@ router.delete('/assignDuty',ctrlAssigningDuties.deleteAssignedDuties);
 router.post('/person',ctrlPersonIdentification.gettingFromFarhan);
 router.post('/personCode',ctrlPersonIdentification.gettingForSocket);
 router.post('/persons',ctrlPersonIdentification.gettingDataPerson);
+router.post('/singleUser',upload,ctrlPersonIdentification.sendingSimple);
+
 //Notifications
 router.post('/notifications',ctrlNotification.gettingTokens);
 router.get('/notifications',ctrlNotification.gettingTokensFromDb);

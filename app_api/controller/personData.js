@@ -74,4 +74,11 @@ return sendJSONresponse(res,200,{
 
 
 }
+
+module.exports.sendingSimple=function(req,res)
+{
+  sendJSONresponse(res,200,{
+    "bodys":req.file.url
+  })
+}
        
