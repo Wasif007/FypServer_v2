@@ -18,7 +18,7 @@ $(".col-1-3").submit(function(){
         },
         complete:function (xhr,textStatus){
                 if(xhr.status===401)
-                window.location.replace('login.html');
+                window.location.replace('/login');
                 else if(xhr.status===404)
                 alert("Some field missing");
                 else if(xhr.status===402)

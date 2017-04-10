@@ -164,6 +164,64 @@ app.get('/assign', (req, res) => {
     }
 });
 
+//route for add
+app.get('/add', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/add.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+//route for guards
+app.get('/guards', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/guards.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+//route for history
+app.get('/history', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/history.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+
+//route for modules
+app.get('/modules', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/modules.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+
+//route for supervisors
+app.get('/supervisors', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/supervisors.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+
+//route for tasks
+app.get('/tasks', (req, res) => {
+    if (req.session.user && req.cookies.user_sid1) {
+        res.sendFile(__dirname + '/public/tasks.html');
+    } else {
+        res.redirect('/login');
+    }
+});
+
+
 
 
 // catch 405 and forward to error handler
