@@ -127,6 +127,26 @@ app.route('/signup')
     .get(sessionChecker, (req, res) => {
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
+     .post((req, res) => {
+      var supervisorToAdd=new SupervisorValidation();
+supervisorToAdd.email=req.body.email;
+supervisorToAdd.name=req.body.name ;
+supervisorToAdd.phone=req.body.phone;
+supervisorToAdd.imageUrl=req.file.url;
+supervisorToAdd.home_address=req.body.home_address;
+
+supervisorToAdd.setPassword(req.body.password);
+
+supervisorToAdd.save(function(err) {
+    if (err) {
+res.redirect('/signup');
+    } else {
+       req.session.user = user.dataValues;
+            res.redirect('/dashboard');
+    }
+  });
+       
+    });
     ;
 
 // route for user Login
