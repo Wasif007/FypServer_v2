@@ -21,7 +21,10 @@ var sendFile = function(res, content) {
 
 module.exports.gettingDataPerson=function(req,res)
 {
-  if(!req.body.name || !req.body.lat || !req.body.lng || !req.body.faculty)
+  var lat="";
+  var lng="";
+  var faculty="";
+  if(!req.body.name || !req.body.location)
   {
     sendJSONresponse(res,401,{
       "Message":"Required Fields are not provided"
@@ -29,7 +32,30 @@ module.exports.gettingDataPerson=function(req,res)
     return;
     }
   
-        
+       if(req.body.location==='FCSE')
+  {
+    faculty="Faculty of Computer Science";
+    lat="34.069277";
+    lng="72.643207";
+  }
+  else if(req.body.location==='FEE')
+  {
+    faculty="Faculty of Electronic Engineering";
+    lat="34.069838";
+    lng="72.64224";
+  }
+  else if(req.body.location==='FCME')
+  {
+    faculty="Faculty of Chemical Engineering";
+    lat="34.070217";
+    lng="72.645503";
+  }
+  else if(req.body.location==='FME')
+  {
+    faculty="Faculty of Mechnical Engineering";
+    lat="34.069374";
+    lng="72.644932";
+  } 
           var message = {
     "to": 'e5biNgrFT9o:APA91bGBtZLMAsatq_HcWZrl6R77nsosnl_rDKjkShsbyHpsWmzUmyWiphcLonftRQ4BtQPypFu-hET1bsa6ex6nFgQ3rIdIMTzZuhKzB6QobyKN51Fax9RTnZP1lMxmvYh8XDPmJLKy',
     "notification" : {
@@ -38,9 +64,9 @@ module.exports.gettingDataPerson=function(req,res)
     },
     "data": {
         "name": req.body.name,
-        "lat":req.body.lat,
-        "lng":req.body.lng,
-        "faculty":req.body.faculty
+        "lat":lat,
+        "lng":lng,
+        "faculty":faculty
     }
 };
 //callback style
