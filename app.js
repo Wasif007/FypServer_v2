@@ -129,6 +129,8 @@ app.route('/signup')
     })
      .post((req, res) => {
       var supervisorToAdd=new SupervisorValidation();
+      console.log(req.body.email+" "+req.body.name+" "+req.body.phone+" "+req.body.home_address+" "+
+        req.file.url+" "+req.body.password);
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
 supervisorToAdd.phone=req.body.phone;
