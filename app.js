@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var uglifyJs = require("uglify-js");
 var fs = require('fs');
 var passport = require('passport');
-
+var session=require('express-session');
 require('./app_api/model/db');
 require('./app_api/config/passport');
 
@@ -21,6 +21,8 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -58,15 +60,66 @@ fs.writeFile('public/angular/pingFyp.min.js', uglified.code, function (err){
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'app_client_2')));
 
+
+app.use(session({
+    key: 'user_sid',
+    secret: 'somerandonstuffs',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        expires: 600000
+    }
+}));
+
+
+// This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
+// This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
+app.use((req, res, next) => {
+    if (req.cookies.user_sid && !req.session.user) {
+        res.clearCookie('user_sid');        
+    }
+    next();
+});
+
+var sessionChecker = (req, res, next) => {
+    if (req.session.user && req.cookies.user_sid) {
+        res.redirect('/signup');
+    } else {
+        next();
+    }    
+};
+
+
+// route for Home-Page
+app.get('/', sessionChecker, (req, res) => {
+    res.redirect('/login');
+});
 
 app.use('/api', routesApi);
 
-// catch 404 and forward to error handler
+
+
+app.route('/signup')
+    .get(sessionChecker, (req, res) => {
+        res.sendFile(__dirname + '/public/signup.html');
+    })
+    ;
+
+
+// route for user Login
+app.route('/login')
+    .get(sessionChecker, (req, res) => {
+        res.sendFile(__dirname + '/public/login.html');
+    })
+   ;
+
+
+
+// catch 405 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 405;
