@@ -128,13 +128,18 @@ app.route('/signup')
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
      .post((req, res) => {
+        var imageUrl;
+      app.post('https://pingfyp.herokuapp.com/api/singleUser',function(reqe,res)
+      {
+        imageUrl=reqe.bodys;
+      });
       var supervisorToAdd=new SupervisorValidation();
       console.log(req.body.email+" "+req.body.name+" "+req.body.phone+" "+req.body.home_address+" "+
         req.file.url+" "+req.body.password);
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
 supervisorToAdd.phone=req.body.phone;
-supervisorToAdd.imageUrl=req.file.url;
+supervisorToAdd.imageUrl=imageUrl;
 supervisorToAdd.home_address=req.body.home_address;
 
 supervisorToAdd.setPassword(req.body.password);
@@ -159,7 +164,7 @@ app.route('/login')
     .post((req, res) => {
       var username = req.body.email,
             password = req.body.password;
-      
+    
       SupervisorValidation.findOne({ email: username }, 
       function (err, user) {
       if (!user) {
