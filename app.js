@@ -149,7 +149,7 @@ app.route('/signup')
     })
      .post((req, res) => {
       var imageUrl;
-     app.post('https://pingfyp.herokuapp.com/signup',upload,function(req,res){
+     app.post('https://pingfyp.herokuapp.com/api/singleUser',upload,function(req,res){
       imageUrl=req.file.url;
      });
       var supervisorToAdd=new SupervisorValidation();
