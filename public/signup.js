@@ -13,9 +13,10 @@ $(".form ").submit(function(e){
         data: formData,
         async: false,
         success: function (data) {
+           localStorage.setItem('supervisor_token',data.token);
           $("#loadingImage").hide();
 
-                window.location.replace("/dashboard");
+                window.location.replace("/login");
 
         },
 
