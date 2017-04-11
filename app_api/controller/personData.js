@@ -57,7 +57,7 @@ module.exports.gettingDataPerson=function(req,res)
     lng="72.644932";
   } 
           var message = {
-    "to": 'e5biNgrFT9o:APA91bGBtZLMAsatq_HcWZrl6R77nsosnl_rDKjkShsbyHpsWmzUmyWiphcLonftRQ4BtQPypFu-hET1bsa6ex6nFgQ3rIdIMTzZuhKzB6QobyKN51Fax9RTnZP1lMxmvYh8XDPmJLKy',
+    "to": 'fS7m7GSb3-g:APA91bEtAjqZ_6LgafkOD-42oMgYHOHK8INLWxjboelKLzItc2gUJw6AsA9ypIXW5i6c46Ke3j5eoglgiaA4le5w3xtjs0zgduKGgN94ZFxrr70UHDSZh8xee6I41Y1GfKQrYaQwhvy2',
     "notification" : {
         "title" : 'PING Notifications',
         "body" : req.body.name
