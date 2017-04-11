@@ -148,15 +148,12 @@ app.route('/signup')
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
      .post((req, res) => {
-      var imageUrl;
-     app.post('https://pingfyp.herokuapp.com/api/singleUser',upload,function(req,res){
-      imageUrl=req.file.url;
-     });
+    
       var supervisorToAdd=new SupervisorValidation();
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
 supervisorToAdd.phone=req.body.phone;
-supervisorToAdd.imageUrl=imageUrl;
+supervisorToAdd.imageUrl='http://res.cloudinary.com/wasif007/image/upload/v1491864706/pingfolder/kwa5tpsi9u244afp6r0d.jpg';
 supervisorToAdd.home_address=req.body.home_address;
 
 supervisorToAdd.setPassword(req.body.password);
