@@ -1,5 +1,24 @@
 require('dotenv').load();
 var express = require('express');
+var multer = require('multer');
+var cloudinary = require('cloudinary');
+var cloudinaryStorage = require('multer-storage-cloudinary');
+cloudinary.config({ 
+  cloud_name: 'wasif007', 
+  api_key: '195135933518811', 
+  api_secret: 'rRSt30F6A5BqzU8IlNRa7IjOQRQ' 
+});
+
+    var storage = cloudinaryStorage({
+  cloudinary: cloudinary,
+    folder: 'pingfolder'
+  
+});
+
+var upload = multer({ //multer settings
+                    storage: storage
+                }).single('file');
+
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -129,7 +148,7 @@ app.route('/signup')
     })
      .post((req, res) => {
         var imageUrl;
-      app.post('https://pingfyp.herokuapp.com/api/singleUser',function(reqe,res)
+      app.post('https://pingfyp.herokuapp.com/api/singleUser',upload,function(reqe,res)
       {
         imageUrl=reqe.bodys;
       });
