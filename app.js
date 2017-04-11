@@ -147,13 +147,13 @@ app.route('/signup')
     .get(sessionChecker, (req, res) => {
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
-     .post(upload,(req, res) => {
-    console.log(req.body.bodys+" "+req.file);
+     .post((req, res) => {
+    
       var supervisorToAdd=new SupervisorValidation();
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
 supervisorToAdd.phone=req.body.phone;
-supervisorToAdd.imageUrl=req.file.url;
+supervisorToAdd.imageUrl='http://res.cloudinary.com/wasif007/image/upload/v1491864706/pingfolder/kwa5tpsi9u244afp6r0d.jpg';
 supervisorToAdd.home_address=req.body.home_address;
 
 supervisorToAdd.setPassword(req.body.password);
