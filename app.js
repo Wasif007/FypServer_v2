@@ -1,6 +1,7 @@
 require('dotenv').load();
 var express = require('express');
 var multer = require('multer');
+var request = require('request');
 var cloudinary = require('cloudinary');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 cloudinary.config({ 
@@ -148,7 +149,7 @@ app.route('/signup')
     })
      .post((req, res) => {
         var imageUrl;
-      app.post('https://pingfyp.herokuapp.com/api/singleUser',upload,function(reqe,res)
+      app.post('https://pingfyp.herokuapp.com/api/singleUser'+'?file='+req.body.imageUrl,upload,function(reqe,res)
       {
         imageUrl=reqe.bodys;
       });
