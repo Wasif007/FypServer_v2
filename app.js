@@ -150,11 +150,11 @@ app.route('/signup')
      .post((req, res) => {
     
       var supervisorToAdd=new SupervisorValidation();
-supervisorToAdd.email=req.body.email;
-supervisorToAdd.name=req.body.name ;
-supervisorToAdd.phone=req.body.phone;
+supervisorToAdd.email=req.body.username;
+supervisorToAdd.name=req.body.email ;
+supervisorToAdd.phone=req.body.password;
 supervisorToAdd.imageUrl='http://res.cloudinary.com/wasif007/image/upload/v1491864706/pingfolder/kwa5tpsi9u244afp6r0d.jpg';
-supervisorToAdd.home_address=req.body.home_address;
+supervisorToAdd.home_address='req.body.home_address';
 
 supervisorToAdd.setPassword(req.body.password);
 
@@ -303,5 +303,22 @@ app.use(function(err, req, res, next) {
     });
 });
 
-
+/*
+  <form class="form" action="/signup" method="post">
+     <img class="img-circle" src="sakhi.jpg">
+      <div>
+        <span>Upload Your Image</span>
+      </div>
+      <input type="text" name="name" placeholder="Enter your name" value ='' required>
+      <input type="text" name="email" placeholder="Enter email" required value ='' >
+      <input type="text" name="password" placeholder="Password" required value ='' > 
+      <input type="text" name="phone" placeholder="Enter phone 03XX-XXXXXXX" required value ='' >
+      <input type="text" name="home_address" placeholder="Enter Home Address" required value ='' >
+      <input id="sg" class="btn btn-default" type="submit" name="Sign up" value="Sign up" >
+       <input id="lg" class="btn btn-default" type="submit" name="log in" value="back">
+        
+      
+      </div>
+    </form>
+*/
 module.exports = app;

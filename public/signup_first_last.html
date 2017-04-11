@@ -21,22 +21,27 @@
   <div class="container">
     <h1>Welcome to PING</h1>
 
-    <form class="form" action="/signup" method="post">
-     <img class="img-circle" src="sakhi.jpg">
-      <div>
-        <span>Upload Your Image</span>
-      </div>
-      <input type="text" name="name" placeholder="Enter your name" value ='' required>
-      <input type="text" name="email" placeholder="Enter email" required value ='' >
-      <input type="text" name="password" placeholder="Password" required value ='' > 
-      <input type="text" name="phone" placeholder="Enter phone 03XX-XXXXXXX" required value ='' >
-      <input type="text" name="home_address" placeholder="Enter Home Address" required value ='' >
-      <input id="sg" class="btn btn-default" type="submit" name="Sign up" value="Sign up" >
-       <input id="lg" class="btn btn-default" type="submit" name="log in" value="back">
-        
-      
-      </div>
-    </form>
+      <div class="container row">
+            <div class="jumbotron col-sm-4 pull-center">
+                <form action="/signup" method="post">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" name="username"/>
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input type="text" name="email"/>
+                    </div>    
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" name="password"/>
+                    </div>
+                    <div>
+                        <input class="btn btn-primary" type="submit" value="Sign Up"/>
+                    </div>
+                </form>                  
+            </div>          
+        </div>
 
   </div>
 
