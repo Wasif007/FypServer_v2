@@ -24,7 +24,7 @@ module.exports.gettingDataPerson=function(req,res)
   var lat="";
   var lng="";
   var faculty="";
-  if(!req.body.name || !req.body.location)
+  if(!req.body.name || !req.body.faculty)
   {
     sendJSONresponse(res,401,{
       "Message":"Required Fields are not provided"
@@ -32,25 +32,25 @@ module.exports.gettingDataPerson=function(req,res)
     return;
     }
   
-       if(req.body.location==='FCSE')
+       if(req.body.faculty==='FCSE')
   {
     faculty="Faculty of Computer Science";
     lat="34.069277";
     lng="72.643207";
   }
-  else if(req.body.location==='FEE')
+  else if(req.body.faculty==='FEE')
   {
     faculty="Faculty of Electronic Engineering";
     lat="34.069838";
     lng="72.64224";
   }
-  else if(req.body.location==='FCME')
+  else if(req.body.faculty==='FCME')
   {
     faculty="Faculty of Chemical Engineering";
     lat="34.070217";
     lng="72.645503";
   }
-  else if(req.body.location==='FME')
+  else if(req.body.faculty==='FME')
   {
     faculty="Faculty of Mechnical Engineering";
     lat="34.069374";
