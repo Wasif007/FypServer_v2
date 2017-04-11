@@ -85,7 +85,21 @@
         
     </footer>
     
-    <script></script>
+    <script>
+     
+              $.ajax({
+                url: "https://pingfyp.herokuapp.com/api/supervisorName/"+$('.form input#email ').val(),
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function(res) {
+               localStorage.setItem('supervisor_Name',res.name);
+               localStorage.setItem('supervisor_ImageUrl',res.imageUrl);
+               
+        },
+        
+    });
+       
+    </script>
         
     
     
