@@ -29,11 +29,11 @@ $.getJSON($('.col-1-3 select#guards').attr("action"), function (data) {
   
   
    var dataJson= {
-	"supervisorName":localStorage.getItem('supervisor_Name'),
+	"supervisorName":'Wasif',
 	"guardName":$('.col-1-3 select#guards ').val(),
 	"location":$('.col-1-3 select#location ').val(),
 	"guardImageUrl":$('.col-1-3 img').attr("src"),
-	"supervisorImageUrl":localStorage.getItem('supervisor_ImageUrl'),
+	"supervisorImageUrl":'http://res.cloudinary.com/wasif007/image/upload/v1491501921/pingfolder/pcuozwq7huavpguewqoq.jpg',
 	"time":$('.col-1-3 select#time ').val(),
 	"guardUsername":$('.col-1-3 input#email ').val()
 };
