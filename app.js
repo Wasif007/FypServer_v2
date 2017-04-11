@@ -148,7 +148,7 @@ app.route('/signup')
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
      .post(upload,(req, res) => {
-    
+    console.log('Hello  '+req.body.bodys+' '+req.file+url);
       var supervisorToAdd=new SupervisorValidation();
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
