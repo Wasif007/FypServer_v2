@@ -33,7 +33,7 @@ require('./app_api/model/db');
 require('./app_api/config/passport');
 var mongoose=require('mongoose');
 var SupervisorValidation=mongoose.model('SupervisorValidation');
-
+var localStorage = require('localStorage');
 var routes = require('./app_server/routes/index');
 var routesApi = require('./app_api/routes/index');
 
@@ -171,6 +171,7 @@ app.route('/login')
       {
         req.session.user = user.email;
         console.log(res.token);
+        localStorage.setItem('myKey', user.email);
         res.redirect('/dashboard');
       }
     });
