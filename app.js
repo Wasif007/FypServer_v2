@@ -1,7 +1,7 @@
 require('dotenv').load();
 var express = require('express');
 var multer = require('multer');
-var request = require('request');
+
 var cloudinary = require('cloudinary');
 var cloudinaryStorage = require('multer-storage-cloudinary');
 cloudinary.config({ 
@@ -148,16 +148,11 @@ app.route('/signup')
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
      .post((req, res) => {
-        var imageUrl;
-        console.log(imageUrl+" fires");
-      app.post('https://pingfyp.herokuapp.com/api/singleUser'+'?file='+req.body.imageUrl,upload,function(reqe,res)
-      {
-        imageUrl=reqe.bodys;
-      });
-      console.log(imageUrl+" secod");
+      var imageUrl;
+     app.post('https://pingfyp.herokuapp.com/signup?file='+req.body.file,upload,function(req,res){
+      imageUrl=req.file.url;
+     });
       var supervisorToAdd=new SupervisorValidation();
-      console.log(req.body.email+" "+req.body.name+" "+req.body.phone+" "+req.body.home_address+" "+
-        req.file.url+" "+req.body.password);
 supervisorToAdd.email=req.body.email;
 supervisorToAdd.name=req.body.name ;
 supervisorToAdd.phone=req.body.phone;
