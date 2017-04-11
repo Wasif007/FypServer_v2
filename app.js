@@ -147,27 +147,7 @@ app.route('/signup')
     .get(sessionChecker, (req, res) => {
         res.sendFile(__dirname + '/public/signup_first_last.html');
     })
-     .post((req, res) => {
-    
-      var supervisorToAdd=new SupervisorValidation();
-supervisorToAdd.email=req.body.username;
-supervisorToAdd.name=req.body.email ;
-supervisorToAdd.phone=req.body.password;
-supervisorToAdd.imageUrl='http://res.cloudinary.com/wasif007/image/upload/v1491864706/pingfolder/kwa5tpsi9u244afp6r0d.jpg';
-supervisorToAdd.home_address='req.body.home_address';
-
-supervisorToAdd.setPassword(req.body.password);
-
-supervisorToAdd.save(function(err) {
-    if (err) {
-res.redirect('/signup');
-    } else {
-       req.session.user = user.dataValues;
-            res.redirect('/dashboard');
-    }
-  });
-       
-    });
+   
     ;
 
 // route for user Login
