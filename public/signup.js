@@ -12,7 +12,7 @@ $(".form ").submit(function(e){
         data: formData,
         async: false,
         success: function (data) {
-                window.location.replace("/login");
+                window.location.replace("/dashboard");
 
         },
 
