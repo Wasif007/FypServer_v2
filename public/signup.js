@@ -3,7 +3,8 @@
 $(".form ").submit(function(e){
     e.preventDefault();
     var formData = new FormData($(this)[0]);
- 
+ $("#loadingImage").show();
+
     $.ajax({
         
         
@@ -12,6 +13,8 @@ $(".form ").submit(function(e){
         data: formData,
         async: false,
         success: function (data) {
+          $("#loadingImage").hide();
+
                 window.location.replace("/dashboard");
 
         },
